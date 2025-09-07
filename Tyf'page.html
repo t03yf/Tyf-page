@@ -1,174 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="icon" type="image/png" href="favicon.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>World's Best Landing Page Designer</title>
+  <title>TYF | Ultimate Landing Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      color: #333;
-      background-color: #f5f5f5;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Roboto', sans-serif; background: #0d0d0d; color: #fff; overflow-x: hidden; }
+
     header {
-      background: linear-gradient(90deg, #4b6cb7, #182848);
+      position: sticky;
+      top: 0;
+      background: linear-gradient(90deg, #ff6a00, #000);
       color: #fff;
-      padding: 80px 20px;
+      z-index: 100;
+      padding: 60px 20px;
       text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
     header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
+      font-size: 3rem;
+      margin-bottom: 15px;
+      transition: transform 0.3s;
     }
+    header h1:hover { transform: rotate(-2deg) scale(1.02); }
     header p {
+      font-size: 1.3rem;
+      color: #ffb347;
+    }
+    .cta-button {
+      display: inline-block;
+      margin-top: 20px;
+      background: #ff4500;
+      color: #fff;
+      padding: 18px 40px;
+      border-radius: 50px;
       font-size: 1.2rem;
-      margin-bottom: 30px;
-    }
-    .cta-btn {
-      background-color: #ff4b2b;
-      color: white;
-      padding: 15px 30px;
-      border: none;
-      border-radius: 5px;
-      font-size: 1rem;
-      cursor: pointer;
       text-decoration: none;
+      transition: transform 0.3s, background 0.3s;
     }
+    .cta-button:hover { background: #ff3300; transform: scale(1.05); }
+
     section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
+      max-width: 1200px;
+      margin: 80px auto;
+      padding: 0 20px;
     }
     section h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
+      font-size: 2.4rem;
+      margin-bottom: 25px;
       text-align: center;
+      color: #ff4500;
+      transition: transform 0.3s;
+      cursor: default;
     }
+    section h2:hover { transform: rotate(-1deg) scale(1.02); }
     section p {
-      font-size: 1rem;
+      font-size: 1.2rem;
+      line-height: 1.8;
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 40px;
+      color: #ddd;
     }
-    .cards {
+
+    .features {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-around;
-      gap: 20px;
+      justify-content: center;
+      gap: 30px;
       margin-top: 40px;
     }
-    .card {
-      background-color: #fff;
-      padding: 30px;
-      border-radius: 10px;
+    .feature-card {
       flex: 1 1 300px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      background: #1a1a1a;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(255,69,0,0.2);
       text-align: center;
+      transition: transform 0.3s;
     }
+    .feature-card:hover { transform: translateY(-10px) rotate(-1deg); }
+    .feature-card h3 {
+      font-size: 1.6rem;
+      margin-bottom: 15px;
+      color: #ff7f50;
+    }
+    .feature-card p { color: #ccc; }
+
     footer {
-      background-color: #182848;
-      color: #fff;
       text-align: center;
-      padding: 40px 20px;
+      padding: 50px 20px;
+      color: #aaa;
+      font-size: 0.9rem;
+      border-top: 1px solid #333;
+      background: #0d0d0d;
+    }
+
+    /* Hook Animations */
+    .fade-in { opacity: 0; transform: translateY(50px); transition: all 0.8s ease; }
+    .fade-in.show { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 768px){
+      header h1 { font-size: 2.2rem; }
+      section h2 { font-size: 2rem; }
+      .feature-card { padding: 20px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Hero Section -->
-  <header>
-    <h1>Turn Your Idea Into a High-Converting Landing Page</h1>
-    <p>Work with the world's best landing page designer – I create pages that sell themselves.</p>
-    <a href="#contact" class="cta-btn">Book Your Free Consultation</a>
-  </header>
+<header>
+  <h1>🚀 Boost Your Sales Today</h1>
+  <p>Professional landing pages that convert visitors into paying customers instantly.</p>
+  <a href="https://www.instagram.com/tyf.landingpages/" class="cta-button" target="_blank">Create Your Landing Page Now</a>
+</header>
 
-  <!-- Problem Section -->
-  <section id="problem">
-    <h2>Struggling With Low-Converting Pages?</h2>
-    <p>Most entrepreneurs spend hours designing landing pages that just don't convert. Visitors leave without taking action – wasting your time and money.</p>
-  </section>
+<section class="fade-in">
+  <h2>🎯 Your Current Problem</h2>
+  <p>Visitors enter your site but don’t buy? Ads consuming budget without returns? Let’s fix it today!</p>
+</section>
 
-  <!-- Solution Section -->
-  <section id="solution">
-    <h2>Landing Pages Designed to Convert Every Visitor</h2>
-    <p>I craft stunning landing pages using world-class design and direct-response copywriting. Each page is tailored to your audience and product to maximize conversions.</p>
-    <a href="#contact" class="cta-btn">Get Your Dream Page</a>
-  </section>
-
-  <!-- How It Works Section -->
-  <section id="how-it-works">
-    <h2>How It Works</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Understand You & Your Audience</h3>
-        <p>Analyze your target customers, pain points, and goals to build a page that speaks directly to them.</p>
-      </div>
-      <div class="card">
-        <h3>Professional Design</h3>
-        <p>Create visually stunning pages optimized for user engagement and conversions.</p>
-      </div>
-      <div class="card">
-        <h3>Direct-Response Copywriting</h3>
-        <p>Compelling copy that guides visitors to take action – buy, subscribe, or book a call.</p>
-      </div>
-      <div class="card">
-        <h3>Launch & Track Results</h3>
-        <p>Monitor visitor behavior and continuously improve your landing page to maximize sales.</p>
-      </div>
+<section class="fade-in">
+  <h2>💡 The Professional Solution</h2>
+  <div class="features">
+    <div class="feature-card">
+      <h3>Attractive Design</h3>
+      <p>Clear colors and smooth UX make every visitor focus on purchasing.</p>
     </div>
-  </section>
-
-  <!-- Testimonials Section -->
-  <section id="testimonials">
-    <h2>What Clients Say</h2>
-    <div class="cards">
-      <div class="card">
-        <p>"Best landing page design experience ever! My sales increased by 300% in just one week." – Happy Client</p>
-      </div>
-      <div class="card">
-        <p>"I never imagined one page could make such a difference. Professional design, real results!" – Satisfied Customer</p>
-      </div>
+    <div class="feature-card">
+      <h3>Persuasive Copywriting</h3>
+      <p>Texts that push the client to take action immediately.</p>
     </div>
-  </section>
-
-  <!-- Offer / Pricing Section -->
-  <section id="pricing">
-    <h2>Get Your Perfect Landing Page Today</h2>
-    <p>Each page is fully customized for your business with a guarantee to convert visitors into paying customers. Starting at $750.</p>
-    <a href="#contact" class="cta-btn">Start Now</a>
-  </section>
-
-  <!-- FAQ Section -->
-  <section id="faq">
-    <h2>Frequently Asked Questions</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>What makes your pages different?</h3>
-        <p>Every page is tailored to your product and audience, combining professional design and persuasive copywriting.</p>
-      </div>
-      <div class="card">
-        <h3>Can I edit the page later?</h3>
-        <p>Yes, all elements are easy to update after delivery.</p>
-      </div>
-      <div class="card">
-        <h3>How long does it take?</h3>
-        <p>Typically 3-5 days for a fully designed, high-converting landing page.</p>
-      </div>
+    <div class="feature-card">
+      <h3>Convert Visitors</h3>
+      <p>Every element is calculated to increase sales with minimal effort.</p>
     </div>
-  </section>
+    <div class="feature-card">
+      <h3>Custom Branding</h3>
+      <p>Designs tailored to your brand identity to stand out from the competition.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Responsive Design</h3>
+      <p>Optimized layouts for all devices to ensure a flawless user experience.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Fast Loading</h3>
+      <p>Lightweight and efficient pages that load instantly to keep visitors engaged.</p>
+    </div>
+    <div class="feature-card">
+      <h3>SEO Optimization</h3>
+      <p>On-page SEO improvements to help your page rank higher on search engines.</p>
+    </div>
+  </div>
+</section>
 
-  <!-- Final CTA Section -->
-  <section id="contact">
-    <h2>One Landing Page Can Transform Your Sales</h2>
-    <p>Let’s craft a page that converts visitors into loyal customers today.</p>
-    <a href="mailto:youremail@example.com" class="cta-btn">Book Now</a>
-  </section>
+<section id="contact" class="fade-in">
+  <h2>✨ Ready to Start?</h2>
+  <p>Let’s build your ultimate landing page today and increase your sales instantly!</p>
+  <a href="https://www.instagram.com/tyf.landingpages/" class="cta-button" target="_blank">Create Your Landing Page Now for $750</a>
+</section>
 
-  <footer>
-    <p>&copy; 2025 Your Name – World's Best Landing Page Designer</p>
-  </footer>
+<footer>
+  TYF | Landing Pages that Sell
+</footer>
+
+<script>
+  // Hook fade-in animation
+  const faders = document.querySelectorAll('.fade-in');
+  const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
+  const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(entry => {
+      if(!entry.isIntersecting) return;
+      entry.target.classList.add('show');
+      observer.unobserve(entry.target);
+    });
+  }, appearOptions);
+  faders.forEach(fader => { appearOnScroll.observe(fader); });
+</script>
 
 </body>
 </html>
