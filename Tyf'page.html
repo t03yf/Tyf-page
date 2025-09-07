@@ -16,36 +16,32 @@
       background: #111;
       color: #fff;
       z-index: 100;
-      padding: 40px 20px;
-      box-shadow: 0 4px 15px rgba(255,165,0,0.2);
+      padding: 30px 20px;
+      box-shadow: 0 4px 10px rgba(255,255,255,0.1);
       text-align: center;
     }
+
     header h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-      color: #ff7f00; /* برتقالي */
+      font-size: 2.8rem;
+      margin-bottom: 10px;
     }
-    .no-hover-effect { transition: none !important; }
+    header p {
+      font-size: 1.2rem;
+      color: #ff4500;
+    }
 
     .cta-button {
       display: inline-block;
-      background: linear-gradient(45deg, #ff7f00, #ffd700); /* برتقالي + ذهبي */
-      color: #000;
+      margin-top: 15px;
+      background: #ff4500;
+      color: #fff;
       padding: 16px 36px;
       border-radius: 50px;
       font-size: 1.2rem;
       text-decoration: none;
       transition: transform 0.3s, background 0.3s;
     }
-    .cta-button:hover { transform: scale(1.1) rotate(-1deg); }
-
-    header .buttons {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 15px;
-    }
+    .cta-button:hover { background: #e03e00; transform: scale(1.05); }
 
     section {
       max-width: 1200px;
@@ -53,20 +49,12 @@
       padding: 0 20px;
     }
     section h2 {
-      font-size: 2.4rem;
-      margin-bottom: 25px;
+      font-size: 2.2rem;
+      margin-bottom: 20px;
       text-align: center;
-      color: #ff7f00; /* برتقالي */
-      transition: transform 0.3s;
+      color: #ff4500;
     }
-    section h2:not(.no-hover-effect):hover { transform: rotate(-2deg); }
-    section p {
-      font-size: 1.1rem;
-      line-height: 1.7;
-      text-align: center;
-      margin-bottom: 30px;
-      color: #fff;
-    }
+    section p { font-size: 1.1rem; line-height: 1.7; text-align: center; margin-bottom: 30px; color: #fff; }
 
     .features { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; margin-top: 50px; }
     .feature-card {
@@ -74,22 +62,23 @@
       background: #111;
       padding: 30px;
       border-radius: 15px;
-      box-shadow: 0 10px 25px rgba(255,127,0,0.15);
+      box-shadow: 0 10px 25px rgba(255,69,0,0.15);
       text-align: center;
       transition: transform 0.3s;
     }
-    .feature-card:hover { transform: translateY(-10px) rotate(-1deg); }
-    .feature-card h3 { font-size: 1.5rem; margin-bottom: 15px; color: #ffd700; /* ذهبي */ }
+    .feature-card:hover { transform: translateY(-10px); }
+    .feature-card h3 { font-size: 1.5rem; margin-bottom: 15px; color: #ff4500; }
     .feature-card p { color: #fff; }
 
     footer {
       text-align: center;
       padding: 50px 20px;
-      color: #fff;
+      color: #777;
       font-size: 0.9rem;
       border-top: 1px solid #333;
     }
 
+    /* Animations */
     .fade-in { opacity: 0; transform: translateY(50px); transition: all 0.8s ease; }
     .fade-in.show { opacity: 1; transform: translateY(0); }
   </style>
@@ -97,61 +86,59 @@
 <body>
 
 <header>
-  <div style="display:flex; flex-direction: column; align-items: center; gap: 20px;">
-    <h1 class="no-hover-effect">🚀 Skyrocket Your Sales Today!</h1>
-    <div class="buttons">
-      <a href="https://www.instagram.com/tyf.landingpages/" class="cta-button" target="_blank">احصل على صفحتك</a>
-    </div>
-  </div>
+  <h1>🚀 Boost Your Sales Today</h1>
+  <p>Professional landing pages that convert visitors into paying customers instantly.</p>
 </header>
 
 <section class="fade-in">
-  <h2 class="no-hover-effect">🎯 Your Current Problem</h2>
-  <p>Visitors enter your site but don’t buy? Ads consuming your budget without returns? We **create landing pages that convert browsers into paying clients instantly** with persuasive copy and attractive design.</p>
+  <h2>🎯 Your Current Problem</h2>
+  <p>Visitors enter your site but don’t buy? Ads consuming budget without returns? Let’s fix it today!</p>
 </section>
 
 <section class="fade-in">
-  <h2 class="no-hover-effect">💡 The Ultimate Solution</h2>
+  <h2>💡 The Professional Solution</h2>
   <div class="features">
     <div class="feature-card">
       <h3>Attractive Design</h3>
-      <p>Modern colors, smooth UX, and clear layouts that guide your visitors to take action.</p>
+      <p>Clear colors and smooth UX make every visitor focus on purchasing.</p>
     </div>
     <div class="feature-card">
       <h3>Persuasive Copywriting</h3>
-      <p>Text that builds trust and pushes your visitors to act immediately.</p>
+      <p>Texts that push the client to take action immediately.</p>
     </div>
     <div class="feature-card">
       <h3>Convert Visitors</h3>
-      <p>Strategically crafted sections to maximize conversions and boost your sales.</p>
+      <p>Every element is calculated to increase sales with minimal effort.</p>
     </div>
+    <!-- المزايا الجديدة -->
     <div class="feature-card">
       <h3>Custom Branding</h3>
-      <p>Tailored to your brand identity to make you stand out in the market.</p>
+      <p>Designs tailored to your brand identity to stand out from the competition.</p>
     </div>
     <div class="feature-card">
       <h3>Responsive Design</h3>
-      <p>Optimized for all devices for a seamless user experience anywhere.</p>
+      <p>Optimized layouts for all devices to ensure a flawless user experience.</p>
     </div>
     <div class="feature-card">
       <h3>Fast Loading</h3>
-      <p>Lightweight pages that load instantly, keeping your visitors engaged.</p>
+      <p>Lightweight and efficient pages that load instantly to keep visitors engaged.</p>
     </div>
+    <!-- إضافة ميزة SEO الجديدة -->
     <div class="feature-card">
       <h3>SEO Optimization</h3>
-      <p>On-page SEO improvements to help your page rank higher in search engines.</p>
+      <p>On-page SEO improvements to help your page rank higher on search engines.</p>
     </div>
   </div>
 </section>
 
 <section id="contact" class="fade-in">
-  <h2 class="no-hover-effect">✨ Ready to Boost Your Business?</h2>
-  <p>Build your **ultimate landing page** today and increase your sales with a **professional high-converting design**!</p>
-  <a href="https://www.instagram.com/tyf.landingpages/" class="cta-button" target="_blank">احصل على استشارتك المجانية</a>
+  <h2>✨ Ready to Start?</h2>
+  <p>Let’s build your ultimate landing page today and increase your sales instantly!</p>
+  <a href="https://www.instagram.com/tyf.landingpages/" class="cta-button" target="_blank">Create Your Landing Page Now for $750</a>
 </section>
 
 <footer>
-  TYF | Landing Pages That Sell
+  TYF | Landing Pages that Sell
 </footer>
 
 <script>
@@ -169,3 +156,4 @@
 
 </body>
 </html>
+
