@@ -8,40 +8,40 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Roboto', sans-serif; background: #000; color: #fff; overflow-x: hidden; }
+    body { font-family: 'Roboto', sans-serif; background: #0d0d0d; color: #fff; overflow-x: hidden; }
 
     header {
       position: sticky;
       top: 0;
-      background: #111;
+      background: linear-gradient(90deg, #ff6a00, #000);
       color: #fff;
       z-index: 100;
-      padding: 30px 20px;
-      box-shadow: 0 4px 10px rgba(255,255,255,0.1);
+      padding: 60px 20px;
       text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
-
     header h1 {
-      font-size: 2.8rem;
-      margin-bottom: 10px;
+      font-size: 3rem;
+      margin-bottom: 15px;
+      transition: transform 0.3s;
     }
+    header h1:hover { transform: rotate(-2deg) scale(1.02); }
     header p {
-      font-size: 1.2rem;
-      color: #ff4500;
+      font-size: 1.3rem;
+      color: #ffb347;
     }
-
     .cta-button {
       display: inline-block;
-      margin-top: 15px;
+      margin-top: 20px;
       background: #ff4500;
       color: #fff;
-      padding: 16px 36px;
+      padding: 18px 40px;
       border-radius: 50px;
       font-size: 1.2rem;
       text-decoration: none;
       transition: transform 0.3s, background 0.3s;
     }
-    .cta-button:hover { background: #e03e00; transform: scale(1.05); }
+    .cta-button:hover { background: #ff3300; transform: scale(1.05); }
 
     section {
       max-width: 1200px;
@@ -49,92 +49,112 @@
       padding: 0 20px;
     }
     section h2 {
-      font-size: 2.2rem;
-      margin-bottom: 20px;
+      font-size: 2.4rem;
+      margin-bottom: 25px;
       text-align: center;
       color: #ff4500;
+      transition: transform 0.3s;
+      cursor: default;
     }
-    section p { font-size: 1.1rem; line-height: 1.7; text-align: center; margin-bottom: 30px; color: #fff; }
+    section h2:hover { transform: rotate(-1deg) scale(1.02); }
+    section p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      text-align: center;
+      margin-bottom: 40px;
+      color: #ddd;
+    }
 
-    .features { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; margin-top: 50px; }
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 40px;
+    }
     .feature-card {
       flex: 1 1 300px;
-      background: #111;
+      background: #1a1a1a;
       padding: 30px;
       border-radius: 15px;
-      box-shadow: 0 10px 25px rgba(255,69,0,0.15);
+      box-shadow: 0 10px 25px rgba(255,69,0,0.2);
       text-align: center;
       transition: transform 0.3s;
     }
-    .feature-card:hover { transform: translateY(-10px); }
-    .feature-card h3 { font-size: 1.5rem; margin-bottom: 15px; color: #ff4500; }
-    .feature-card p { color: #fff; }
+    .feature-card:hover { transform: translateY(-10px) rotate(-1deg); }
+    .feature-card h3 {
+      font-size: 1.6rem;
+      margin-bottom: 15px;
+      color: #ff7f50;
+    }
+    .feature-card p { color: #ccc; }
 
     footer {
       text-align: center;
       padding: 50px 20px;
-      color: #777;
+      color: #aaa;
       font-size: 0.9rem;
       border-top: 1px solid #333;
+      background: #0d0d0d;
     }
 
-    /* Animations */
+    /* Hook Animations */
     .fade-in { opacity: 0; transform: translateY(50px); transition: all 0.8s ease; }
     .fade-in.show { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 768px){
+      header h1 { font-size: 2.2rem; }
+      section h2 { font-size: 2rem; }
+      .feature-card { padding: 20px; }
+    }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>🚀 Boost Your Sales Today</h1>
-  <p>Professional landing pages that convert visitors into paying customers instantly.</p>
+  <h1>🚀 Skyrocket Your Sales Today!</h1>
+  <p>Stop losing visitors. Turn every click into a paying customer with a professionally designed landing page.</p>
 </header>
 
 <section class="fade-in">
   <h2>🎯 Your Current Problem</h2>
-  <p>Visitors enter your site but don’t buy? Ads consuming budget without returns? Let’s fix it today!</p>
+  <p>Are your ads draining your budget with zero results? Visitors leaving without buying? Every wasted click is money lost. Don’t let your competitors take your clients while you wait!</p>
 </section>
 
 <section class="fade-in">
-  <h2>💡 The Professional Solution</h2>
+  <h2>💡 The Ultimate Solution</h2>
   <div class="features">
     <div class="feature-card">
-      <h3>Attractive Design</h3>
-      <p>Clear colors and smooth UX make every visitor focus on purchasing.</p>
+      <h3>Stunning Design</h3>
+      <p>Captivating visuals and smooth UX guide your visitors effortlessly toward purchasing.</p>
     </div>
     <div class="feature-card">
       <h3>Persuasive Copywriting</h3>
-      <p>Texts that push the client to take action immediately.</p>
+      <p>Words carefully crafted to make your audience act immediately, boosting conversions.</p>
     </div>
     <div class="feature-card">
-      <h3>Convert Visitors</h3>
-      <p>Every element is calculated to increase sales with minimal effort.</p>
+      <h3>Convert Every Visitor</h3>
+      <p>Every element is strategically designed to maximize sales with minimal effort.</p>
     </div>
-    <!-- المزايا الجديدة -->
     <div class="feature-card">
       <h3>Custom Branding</h3>
-      <p>Designs tailored to your brand identity to stand out from the competition.</p>
+      <p>Your brand, your identity. Unique designs that stand out and make a lasting impression.</p>
     </div>
     <div class="feature-card">
-      <h3>Responsive Design</h3>
-      <p>Optimized layouts for all devices to ensure a flawless user experience.</p>
+      <h3>Responsive & Fast</h3>
+      <p>Optimized for all devices, with lightning-fast loading times to keep your visitors engaged.</p>
     </div>
     <div class="feature-card">
-      <h3>Fast Loading</h3>
-      <p>Lightweight and efficient pages that load instantly to keep visitors engaged.</p>
-    </div>
-    <!-- إضافة ميزة SEO الجديدة -->
-    <div class="feature-card">
-      <h3>SEO Optimization</h3>
-      <p>On-page SEO improvements to help your page rank higher on search engines.</p>
+      <h3>SEO & Visibility</h3>
+      <p>On-page SEO ensures your page ranks higher, attracting more traffic organically.</p>
     </div>
   </div>
 </section>
 
 <section id="contact" class="fade-in">
-  <h2>✨ Ready to Start?</h2>
-  <p>Let’s build your ultimate landing page today and increase your sales instantly!</p>
-  <a href="https://www.instagram.com/tyf.landingpages/" class="cta-button" target="_blank">Create Your Landing Page Now for $750</a>
+  <h2>✨ Ready to Boost Your Business?</h2>
+  <p>Don’t wait another day! Book your free consultation now and discover how a high-converting landing page can transform your sales.</p>
+  <a href="https://www.instagram.com/tyf.landingpages/" class="cta-button" target="_blank">Get Your Free Consultation</a>
 </section>
 
 <footer>
@@ -142,6 +162,7 @@
 </footer>
 
 <script>
+  // Hook fade-in animation
   const faders = document.querySelectorAll('.fade-in');
   const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
   const appearOnScroll = new IntersectionObserver(function(entries, observer) {
@@ -156,4 +177,3 @@
 
 </body>
 </html>
-
