@@ -220,47 +220,9 @@
   </p>
   <p>Grab this exclusive deal now and watch your sales soar.</p>
   <div class="contact-buttons">
-    <a href="https://www.instagram.com/tyf.landingpages/" target="_blank" class="cta-button">Start Now</a>
+    <a href="https://www.instagram.com/tyf.landingpages/" target="_blank" class="cta-button">DM me 'Page' for Doubling Your Clients</a>
   </div>
 </section>
 
 <footer>
-  TYF | Landing Pages that Sell
-</footer>
-
-<script>
-  // ظهور العناصر عند التمرير
-  const faders = document.querySelectorAll('.fade-in');
-  const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
-  const appearOnScroll = new IntersectionObserver(function(entries, observer) {
-    entries.forEach(entry => {
-      if(!entry.isIntersecting) return;
-      entry.target.classList.add('show');
-      observer.unobserve(entry.target);
-    });
-  }, appearOptions);
-  faders.forEach(fader => { appearOnScroll.observe(fader); });
-
-  // عدّاد تنازلي حتى منتصف الليل
-  function updateCountdown() {
-    const countdownEl = document.getElementById("countdown");
-    const now = new Date();
-    const end = new Date();
-    
-    end.setHours(0,0,0,0); // منتصف الليل اليوم
-    if(now >= end) end.setDate(end.getDate() + 1); // منتصف الليل التالي إذا تجاوزنا اليوم
-
-    const diff = end - now;
-    const hours = Math.floor(diff / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-    countdownEl.textContent = `Offer valid for 12h – Ends in ${hours}h ${minutes}m ${seconds}s`;
-  }
-
-  setInterval(updateCountdown, 1000);
-  updateCountdown();
-</script>
-
-</body>
-</html>
+  TYF
