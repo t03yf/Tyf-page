@@ -21,14 +21,8 @@
       text-align: center;
     }
 
-    header h1 {
-      font-size: 2.8rem;
-      margin-bottom: 10px;
-    }
-    header p {
-      font-size: 1.2rem;
-      color: #ff4500;
-    }
+    header h1 { font-size: 2.8rem; margin-bottom: 10px; }
+    header p { font-size: 1.2rem; color: #ff4500; }
 
     .cta-button {
       display: inline-block;
@@ -79,17 +73,9 @@
       text-align: center;
       transition: transform 0.3s;
     }
-    .feature-card:hover {
-      transform: translateY(-10px);
-    }
-    .feature-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 15px;
-      color: #ff4500;
-    }
-    .feature-card p {
-      color: #fff;
-    }
+    .feature-card:hover { transform: translateY(-10px); }
+    .feature-card h3 { font-size: 1.5rem; margin-bottom: 15px; color: #ff4500; }
+    .feature-card p { color: #fff; }
 
     .testimonials {
       display: flex;
@@ -139,17 +125,9 @@
       transform: translateY(50px);
       transition: all 0.8s ease;
     }
-    .fade-in.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .fade-in.show { opacity: 1; transform: translateY(0); }
 
-    .contact-buttons {
-      display: flex;
-      justify-content: center;
-      margin-top: 30px;
-    }
-
+    .contact-buttons { display: flex; justify-content: center; margin-top: 30px; }
     .contact-buttons a {
       background: #ff4500;
       color: #fff;
@@ -160,10 +138,7 @@
       font-weight: 700;
       transition: background 0.3s;
     }
-
-    .contact-buttons a:hover {
-      background: #e03e00;
-    }
+    .contact-buttons a:hover { background: #e03e00; }
   </style>
 </head>
 <body>
@@ -239,7 +214,10 @@
 <section class="fade-in">
   <h2>🎁 Limited-Time Offer</h2>
   <p>🚨 Regular Price: <s>1500 USD</s></p>
-  <p>✅ Now: <strong>750 USD</strong> (50% OFF) – Only for the first 5 clients! (Offer valid for 12h)</p>
+  <p>
+    ✅ Now: <strong>750 USD</strong> (50% OFF) – Only for the first 5 clients! 
+    (<span id="countdown">Offer valid for 12h</span>)
+  </p>
   <p>Grab this exclusive deal now and watch your sales soar.</p>
   <div class="contact-buttons">
     <a href="https://www.instagram.com/tyf.landingpages/" target="_blank" class="cta-button">Start Now</a>
@@ -251,6 +229,7 @@
 </footer>
 
 <script>
+  // ظهور العناصر عند التمرير
   const faders = document.querySelectorAll('.fade-in');
   const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
   const appearOnScroll = new IntersectionObserver(function(entries, observer) {
@@ -261,6 +240,26 @@
     });
   }, appearOptions);
   faders.forEach(fader => { appearOnScroll.observe(fader); });
+
+  // عدّاد تنازلي حتى منتصف الليل
+  function updateCountdown() {
+    const countdownEl = document.getElementById("countdown");
+    const now = new Date();
+    const end = new Date();
+    
+    end.setHours(0,0,0,0); // منتصف الليل اليوم
+    if(now >= end) end.setDate(end.getDate() + 1); // منتصف الليل التالي إذا تجاوزنا اليوم
+
+    const diff = end - now;
+    const hours = Math.floor(diff / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    countdownEl.textContent = `Offer valid for 12h – Ends in ${hours}h ${minutes}m ${seconds}s`;
+  }
+
+  setInterval(updateCountdown, 1000);
+  updateCountdown();
 </script>
 
 </body>
