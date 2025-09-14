@@ -40,6 +40,7 @@
       font-size: 1.2rem;
       text-decoration: none;
       transition: transform 0.3s, background 0.3s;
+      cursor: pointer;
     }
     .cta-button:hover { background: #e03e00; transform: scale(1.05); }
 
@@ -90,6 +91,40 @@
       color: #fff;
     }
 
+    .testimonials {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      max-width: 800px;
+      margin: 0 auto 50px;
+    }
+    .testimonial-card {
+      background: #111;
+      padding: 25px 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(255, 69, 0, 0.15);
+      color: #fff;
+      font-style: italic;
+      position: relative;
+    }
+    .testimonial-card::before {
+      content: "“";
+      font-size: 3rem;
+      color: #ff4500;
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      font-weight: bold;
+      font-style: normal;
+    }
+    .testimonial-author {
+      margin-top: 15px;
+      font-weight: 700;
+      text-align: right;
+      color: #ff4500;
+      font-style: normal;
+    }
+
     footer {
       text-align: center;
       padding: 50px 20px;
@@ -116,17 +151,18 @@
     }
 
     .contact-buttons a {
-      background: #444;
+      background: #ff4500;
       color: #fff;
-      padding: 12px 24px;
-      border-radius: 30px;
+      padding: 16px 40px;
+      border-radius: 50px;
       text-decoration: none;
+      font-size: 1.3rem;
+      font-weight: 700;
       transition: background 0.3s;
-      font-size: 1.1rem;
     }
 
     .contact-buttons a:hover {
-      background: #ff4500;
+      background: #e03e00;
     }
   </style>
 </head>
@@ -184,13 +220,19 @@
 
 <section class="fade-in">
   <h2>🗣️ What Clients Say</h2>
-  <div class="feature-card">
-    <p>“TYF designed a page that made my launch 10x easier. Clear communication & fast delivery!”</p>
-    <p>- A. Coach</p>
-  </div>
-  <div class="feature-card" style="margin-top: 20px;">
-    <p>“Very satisfied. TYF is professional and understands how to build high-converting pages.”</p>
-    <p>- R. Marketer</p>
+  <div class="testimonials">
+    <div class="testimonial-card">
+      <p>Since launching the landing page, my sales increased by 46% within two months. TYF’s design made a real difference!</p>
+      <div class="testimonial-author">- Sarah K., Online Boutique Owner</div>
+    </div>
+    <div class="testimonial-card">
+      <p>Thanks to TYF, our email signups doubled, and our conversion rate went up by 38%. Highly recommended!</p>
+      <div class="testimonial-author">- Omar H., Digital Marketer</div>
+    </div>
+    <div class="testimonial-card">
+      <p>The page load speed improved drastically, and sales rose by 52% in just one month. TYF’s work is top-notch.</p>
+      <div class="testimonial-author">- Lina A., Course Creator</div>
+    </div>
   </div>
 </section>
 
@@ -198,14 +240,9 @@
   <h2>🎁 Limited-Time Offer</h2>
   <p>🚨 Regular Price: <s>1500 SAR</s></p>
   <p>✅ Now: <strong>750 SAR</strong> (50% OFF) – Only for the first 5 clients!</p>
-  <p>Grab this offer now before it ends.</p>
-</section>
-
-<section id="contact" class="fade-in">
-  <h2>✨ Ready to Start?</h2>
-  <p>Let’s build your ultimate landing page today and increase your sales instantly!</p>
+  <p>Grab this exclusive deal now and watch your sales soar.</p>
   <div class="contact-buttons">
-    <a href="https://www.instagram.com/tyf.landingpages/" target="_blank">📷 Instagram</a>
+    <a href="https://www.instagram.com/tyf.landingpages/" target="_blank" class="cta-button">Start Now</a>
   </div>
 </section>
 
