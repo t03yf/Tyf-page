@@ -214,7 +214,7 @@
 <section class="fade-in">
   <h2>🎁 Limited-Time Offer</h2>
   <p>🚨 Regular Price: <s>1500 USD</s></p>
-  <p> ✅ Now: <strong>750 USD</strong> (50% OFF) – Only for the first 10 clients! (<span id="countdown">Offer valid for 12h</span>) </p>
+  <p> ✅ Now: <strong>750 USD</strong> (50% OFF) – Only for the first 10 clients! (Offer valid for 24h) </p>
   <p>Grab this exclusive deal now and watch your sales soar.</p>
   <div class="contact-buttons">
     <a href="https://www.instagram.com/tyf.landingpages/" target="_blank" class="cta-button">DM me 'Page' for Doubling Your Clients</a>
@@ -243,26 +243,7 @@
   faders.forEach(fader => {
     appearOnScroll.observe(fader);
   });
-
-  // عدّاد تنازلي حتى منتصف الليل
-  function updateCountdown() {
-    const countdownEl = document.getElementById("countdown");
-    const now = new Date();
-    const end = new Date();
-    end.setHours(0,0,0,0); // منتصف الليل اليوم
-    if(now >= end) end.setDate(end.getDate() + 1); // منتصف الليل التالي إذا تجاوزنا اليوم
-
-    const diff = end - now;
-    const hours = Math.floor(diff / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-    countdownEl.textContent = `Offer valid for 12h – Ends in ${hours}h ${minutes}m ${seconds}s`;
-  }
-  setInterval(updateCountdown, 1000);
-  updateCountdown();
 </script>
 
 </body>
 </html>
-
