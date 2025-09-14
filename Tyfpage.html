@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <link rel="icon" type="image/png" href="favicon.png">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>TYF | Ultimate Landing Page</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Roboto', sans-serif; background: #000; color: #fff; overflow-x: hidden; }
@@ -54,21 +54,41 @@
       text-align: center;
       color: #ff4500;
     }
-    section p { font-size: 1.1rem; line-height: 1.7; text-align: center; margin-bottom: 30px; color: #fff; }
+    section p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      text-align: center;
+      margin-bottom: 30px;
+      color: #fff;
+    }
 
-    .features { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; margin-top: 50px; }
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 50px;
+    }
     .feature-card {
       flex: 1 1 300px;
       background: #111;
       padding: 30px;
       border-radius: 15px;
-      box-shadow: 0 10px 25px rgba(255,69,0,0.15);
+      box-shadow: 0 10px 25px rgba(255, 69, 0, 0.15);
       text-align: center;
       transition: transform 0.3s;
     }
-    .feature-card:hover { transform: translateY(-10px); }
-    .feature-card h3 { font-size: 1.5rem; margin-bottom: 15px; color: #ff4500; }
-    .feature-card p { color: #fff; }
+    .feature-card:hover {
+      transform: translateY(-10px);
+    }
+    .feature-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      color: #ff4500;
+    }
+    .feature-card p {
+      color: #fff;
+    }
 
     footer {
       text-align: center;
@@ -79,8 +99,35 @@
     }
 
     /* Animations */
-    .fade-in { opacity: 0; transform: translateY(50px); transition: all 0.8s ease; }
-    .fade-in.show { opacity: 1; transform: translateY(0); }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s ease;
+    }
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .contact-buttons a {
+      background: #444;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: background 0.3s;
+      font-size: 1.1rem;
+    }
+
+    .contact-buttons a:hover {
+      background: #ff4500;
+    }
   </style>
 </head>
 <body>
@@ -129,10 +176,37 @@
   </div>
 </section>
 
+<section class="fade-in">
+  <h2>🙋‍♂️ About Me</h2>
+  <p>I'm TYF, a landing page designer & developer helping entrepreneurs, course creators, and digital businesses turn visitors into real buyers.</p>
+  <p>I design with conversion in mind — not just beauty. My goal is to build pages that drive results and bring you real ROI.</p>
+</section>
+
+<section class="fade-in">
+  <h2>🗣️ What Clients Say</h2>
+  <div class="feature-card">
+    <p>“TYF designed a page that made my launch 10x easier. Clear communication & fast delivery!”</p>
+    <p>- A. Coach</p>
+  </div>
+  <div class="feature-card" style="margin-top: 20px;">
+    <p>“Very satisfied. TYF is professional and understands how to build high-converting pages.”</p>
+    <p>- R. Marketer</p>
+  </div>
+</section>
+
+<section class="fade-in">
+  <h2>🎁 Limited-Time Offer</h2>
+  <p>🚨 Regular Price: <s>1500 SAR</s></p>
+  <p>✅ Now: <strong>750 SAR</strong> (50% OFF) – Only for the first 5 clients!</p>
+  <p>Grab this offer now before it ends.</p>
+</section>
+
 <section id="contact" class="fade-in">
   <h2>✨ Ready to Start?</h2>
   <p>Let’s build your ultimate landing page today and increase your sales instantly!</p>
-  <a href="https://www.instagram.com/tyf.landingpages/" class="cta-button" target="_blank">Start Now with Tyf</a>
+  <div class="contact-buttons">
+    <a href="https://www.instagram.com/tyf.landingpages/" target="_blank">📷 Instagram</a>
+  </div>
 </section>
 
 <footer>
@@ -154,4 +228,3 @@
 
 </body>
 </html>
-
