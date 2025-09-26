@@ -24,20 +24,6 @@
     header h1 { font-size: 2.8rem; margin-bottom: 10px; }
     header p { font-size: 1.2rem; color: #ff4500; }
 
-    .cta-button {
-      display: inline-block;
-      margin-top: 15px;
-      background: #ff4500;
-      color: #fff;
-      padding: 16px 36px;
-      border-radius: 50px;
-      font-size: 1.2rem;
-      text-decoration: none;
-      transition: transform 0.3s, background 0.3s;
-      cursor: pointer;
-    }
-    .cta-button:hover { background: #e03e00; transform: scale(1.05); }
-
     section {
       max-width: 1200px;
       margin: 80px auto;
@@ -126,19 +112,6 @@
       transition: all 0.8s ease;
     }
     .fade-in.show { opacity: 1; transform: translateY(0); }
-
-    .contact-buttons { display: flex; justify-content: center; margin-top: 30px; }
-    .contact-buttons a {
-      background: #ff4500;
-      color: #fff;
-      padding: 16px 40px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-size: 1.3rem;
-      font-weight: 700;
-      transition: background 0.3s;
-    }
-    .contact-buttons a:hover { background: #e03e00; }
   </style>
 </head>
 <body>
@@ -214,11 +187,11 @@
 <section class="fade-in">
   <h2>🎁 Limited-Time Offer</h2>
   <p>🚨 Regular Price: <s>1500 USD</s></p>
-  <p> ✅ Now: <strong>750 USD</strong> (50% OFF) – Only for the first 10 clients! (Offer valid for 12h) </p>
+  <p>
+    ✅ Now: <strong>750 USD</strong> (50% OFF) – Only for the first 10 clients! 
+    (Offer valid for 12h <span id="countdown"></span>)
+  </p>
   <p>Grab this exclusive deal now and watch your sales soar.</p>
-  <div class="contact-buttons">
-    <a href="https://www.instagram.com/tyf.landingpages/" target="_blank" class="cta-button">DM me "Page" and unlock more sales</a>
-  </div>
 </section>
 
 <footer>
@@ -239,13 +212,33 @@
       observer.unobserve(entry.target);
     });
   }, appearOptions);
-
   faders.forEach(fader => {
     appearOnScroll.observe(fader);
   });
+
+  // عداد تنازلي ينتهي عند نهاية يوم 27/09/2025
+  function updateCountdown() {
+    const countdownElement = document.getElementById('countdown');
+    const now = new Date();
+    const endDate = new Date('2025-09-27T23:59:59');
+    const diff = endDate - now;
+
+    if(diff <= 0) {
+      countdownElement.innerHTML = ' - Offer ended';
+      clearInterval(timer);
+      return;
+    }
+
+    const hours = Math.floor(diff / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    countdownElement.innerHTML = ` - ${hours}h ${minutes}m ${seconds}s`;
+  }
+
+  const timer = setInterval(updateCountdown, 1000);
+  updateCountdown();
 </script>
 
 </body>
 </html>
-
-
