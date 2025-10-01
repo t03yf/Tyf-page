@@ -109,7 +109,7 @@
     .fade-in {
       opacity: 0;
       transform: translateY(50px);
-      transition: all 0.5s ease; /* أسرع */
+      transition: all 0.35s ease; /* 👈 أسرع من 0.5s */
     }
     .fade-in.show { opacity: 1; transform: translateY(0); }
   </style>
@@ -199,9 +199,11 @@
 </footer>
 
 <script>
-  // إظهار العناصر فوراً عند التحميل
+  // إظهار العناصر عند التحميل
   window.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.fade-in').forEach(el => el.classList.add('show'));
+    document.querySelectorAll('.fade-in').forEach((el, i) => {
+      setTimeout(() => el.classList.add('show'), i * 150); // 👈 كل عنصر يتأخر شوي
+    });
   });
 
   // عداد تنازلي ينتهي يوم 03/10/2025 الساعة 00:00
