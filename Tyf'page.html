@@ -109,7 +109,7 @@
     .fade-in {
       opacity: 0;
       transform: translateY(50px);
-      transition: all 0.8s ease;
+      transition: all 0.5s ease; /* أسرع */
     }
     .fade-in.show { opacity: 1; transform: translateY(0); }
   </style>
@@ -188,8 +188,8 @@
   <h2>🎁 Limited-Time Offer</h2>
   <p>🚨 Regular Price: <s>1500 USD</s></p>
   <p>
-    ✅ Now: <strong>750 USD</strong> (50% OFF) – Only for the first 10 clients! 
-    (Offer valid for 24h – Ends in <span id="countdown"></span>)
+    ✅ Now: <strong>750 USD</strong> (50% OFF) – Only for the first <strong>5 clients!</strong><br>
+    (Offer valid for <strong>48h</strong> – Ends in <span id="countdown"></span>)
   </p>
   <p>Grab this exclusive deal now and watch your sales soar.</p>
 </section>
@@ -199,28 +199,16 @@
 </footer>
 
 <script>
-  // ظهور العناصر عند التمرير
-  const faders = document.querySelectorAll('.fade-in');
-  const appearOptions = {
-    threshold: 0.2,
-    rootMargin: "0px 0px -50px 0px"
-  };
-  const appearOnScroll = new IntersectionObserver(function(entries, observer) {
-    entries.forEach(entry => {
-      if(!entry.isIntersecting) return;
-      entry.target.classList.add('show');
-      observer.unobserve(entry.target);
-    });
-  }, appearOptions);
-  faders.forEach(fader => {
-    appearOnScroll.observe(fader);
+  // إظهار العناصر فوراً عند التحميل
+  window.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.fade-in').forEach(el => el.classList.add('show'));
   });
 
-  // عداد تنازلي ينتهي عند نهاية يوم 27/09/2025
+  // عداد تنازلي ينتهي يوم 03/10/2025 الساعة 00:00
   function updateCountdown() {
     const countdownElement = document.getElementById('countdown');
     const now = new Date();
-    const endDate = new Date('2025-09-27T23:59:59');
+    const endDate = new Date('2025-10-03T00:00:00');
     const diff = endDate - now;
 
     if(diff <= 0) {
@@ -242,4 +230,3 @@
 
 </body>
 </html>
-
