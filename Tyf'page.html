@@ -176,6 +176,13 @@
     (Offer valid for <strong>48h</strong> – Ends in <span id="countdown"></span>)
   </p>
   <p>Grab this exclusive deal now and watch your sales soar.</p>
+
+  <!-- ✅ إضافات جديدة -->
+  <p style="margin-top:25px; color:#ff4500; font-weight:bold;">🛡️ 1-Week Guarantee</p>
+  <p>You’ll get a full week of <strong>unlimited edits & revisions</strong> after purchase — until you're 100% satisfied.</p>
+
+  <p style="margin-top:15px; color:#ff4500; font-weight:bold;">💰 No Risk — Pay Only If You Love It</p>
+  <p>You don’t pay a single dollar until you love your landing page. Zero risk, nothing to lose.</p>
 </section>
 
 <section class="fade-in">
@@ -194,22 +201,18 @@
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('show');
-        observer.unobserve(entry.target); // Once visible, no need to observe again
+        observer.unobserve(entry.target);
       }
     });
-  }, {
-    threshold: 0.15 // Start fade-in when 15% of section is visible
-  });
+  }, { threshold: 0.15 });
 
-  document.querySelectorAll('.fade-in').forEach(section => {
-    observer.observe(section);
-  });
+  document.querySelectorAll('.fade-in').forEach(section => observer.observe(section));
 
   // Countdown Timer
   function updateCountdown() {
     const countdownElement = document.getElementById('countdown');
     const now = new Date();
-    const endDate = new Date('2025-10-07T00:00:00'); // 7 أكتوبر 2025 فجرًا
+    const endDate = new Date('2025-10-07T00:00:00');
     const diff = endDate - now;
 
     if (diff <= 0) {
