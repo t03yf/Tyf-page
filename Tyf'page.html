@@ -95,9 +95,12 @@
     .fade-in {
       opacity: 0;
       transform: translateY(50px);
-      transition: all 0.25s ease;
+      transition: all 0.6s ease;
     }
-    .fade-in.show { opacity: 1; transform: translateY(0); }
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
 <body>
@@ -186,16 +189,27 @@
 </footer>
 
 <script>
-  window.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.fade-in').forEach((el, i) => {
-      setTimeout(() => el.classList.add('show'), i * 100); // تسريع الـ fade-in
+  // Fade-in on scroll using IntersectionObserver
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target); // Once visible, no need to observe again
+      }
     });
+  }, {
+    threshold: 0.15 // Start fade-in when 15% of section is visible
   });
 
+  document.querySelectorAll('.fade-in').forEach(section => {
+    observer.observe(section);
+  });
+
+  // Countdown Timer
   function updateCountdown() {
     const countdownElement = document.getElementById('countdown');
     const now = new Date();
-    const endDate = new Date('2025-10-07T00:00:00'); // بداية يوم 07/10/2025
+    const endDate = new Date('2025-10-07T00:00:00'); // 7 أكتوبر 2025 فجرًا
     const diff = endDate - now;
 
     if (diff <= 0) {
