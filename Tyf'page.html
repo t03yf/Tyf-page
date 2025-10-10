@@ -130,7 +130,7 @@
 
 <section class="fade-in">
   <h2>🎯 Your Current Problem</h2>
-  <p>Visitors enter your site but don’t buy? Ads consuming budget without returns? Let’s fix it today!</p>
+  <p>Visitors enter your site but don’t buy? Ads consuming your budget without results? Let’s fix that today!</p>
 </section>
 
 <section class="fade-in">
@@ -138,18 +138,18 @@
   <div class="features">
     <div class="feature-card"><h3>Attractive Design</h3><p>Clear colors and smooth UX make every visitor focus on purchasing.</p></div>
     <div class="feature-card"><h3>Persuasive Copywriting</h3><p>Texts that push the client to take action immediately.</p></div>
-    <div class="feature-card"><h3>Convert Visitors</h3><p>Every element is calculated to increase sales with minimal effort.</p></div>
-    <div class="feature-card"><h3>Custom Branding</h3><p>Designs tailored to your brand identity to stand out from the competition.</p></div>
-    <div class="feature-card"><h3>Responsive Design</h3><p>Optimized layouts for all devices to ensure a flawless user experience.</p></div>
-    <div class="feature-card"><h3>Fast Loading</h3><p>Lightweight and efficient pages that load instantly to keep visitors engaged.</p></div>
-    <div class="feature-card"><h3>SEO Optimization</h3><p>On-page SEO improvements to help your page rank higher on search engines.</p></div>
+    <div class="feature-card"><h3>Convert Visitors</h3><p>Every element is crafted to increase sales with minimal effort.</p></div>
+    <div class="feature-card"><h3>Custom Branding</h3><p>Designs tailored to your brand identity to stand out from competitors.</p></div>
+    <div class="feature-card"><h3>Responsive Design</h3><p>Optimized layouts for all devices to ensure a flawless experience.</p></div>
+    <div class="feature-card"><h3>Fast Loading</h3><p>Lightweight and efficient pages that load instantly.</p></div>
+    <div class="feature-card"><h3>SEO Optimization</h3><p>On-page SEO improvements to help your page rank higher.</p></div>
   </div>
 </section>
 
 <section class="fade-in">
   <h2>🙋‍♂️ About Me</h2>
-  <p>I'm TYF, a landing page designer & developer helping entrepreneurs, course creators, and digital businesses turn visitors into real buyers.</p>
-  <p>I design with conversion in mind — not just beauty. My goal is to build pages that drive results and bring you real ROI.</p>
+  <p>I'm TYF — a landing page designer & developer helping entrepreneurs, course creators, and digital businesses turn visitors into real buyers.</p>
+  <p>I design with conversion in mind — not just beauty. My goal is to build pages that drive results and real ROI.</p>
 </section>
 
 <section class="fade-in">
@@ -175,7 +175,7 @@
   <p>🚨 Regular Price: <s>1500 USD</s></p>
   <p>
     ✅ Now: <strong>750 USD</strong> (50% OFF) – Only for the first <strong>10 clients!</strong><br>
-    (Offer valid until <span id="countdown"></span> | <span class="countdown-info">4/10 pages completed</span>)
+    (Offer ends in <span id="countdown"></span> | <span class="countdown-info">4/10 pages completed</span>)
   </p>
 
   <p style="margin-top:25px; color:#ff4500; font-weight:bold;">🛡️ 1-Week Guarantee</p>
@@ -191,7 +191,7 @@
   <div style="display:flex; flex-direction:column; align-items:center; gap:15px; margin-top:15px;">
     <a href="https://instagram.com/tyf.landingpages" target="_blank" class="btn btn-instagram">DM me on Instagram</a>
     <a href="https://wa.me/213676127853" target="_blank" class="btn btn-whatsapp">Chat on WhatsApp</a>
-    <p style="margin-top:10px; color:#ff4500; font-weight:bold;">Or reply to my email –"Lets go"!</p>
+    <p style="margin-top:10px; color:#ff4500; font-weight:bold;">Or reply to my email – "Let's go"!</p>
   </div>
 </section>
 
@@ -209,7 +209,7 @@
   }, { threshold: 0.15 });
   document.querySelectorAll('.fade-in').forEach(section => observer.observe(section));
 
-  // Countdown to next Sunday at 23:59:59
+  // Get next Sunday at 23:59:59
   function getNextSunday() {
     const now = new Date();
     const day = now.getDay(); // Sunday = 0
@@ -220,6 +220,7 @@
     return nextSunday;
   }
 
+  // Countdown update
   function updateCountdown() {
     const countdown = document.getElementById('countdown');
     const end = getNextSunday();
@@ -227,7 +228,7 @@
     const diff = end - now;
 
     if (diff <= 0) {
-      countdown.textContent = "00:00:00";
+      countdown.innerHTML = "<span style='color:#ff0000; font-weight:bold;'>⛔ Offer Ended! Wait for the next one.</span>";
       return;
     }
 
