@@ -107,6 +107,17 @@
       color: #ff4500;
       font-weight: bold;
     }
+
+    /* Buttons */
+    .btn {
+      padding: 12px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+    }
+    .btn-instagram { background:#ff4500; color:#fff; }
+    .btn-whatsapp { background:#25D366; color:#fff; }
   </style>
 </head>
 <body>
@@ -192,8 +203,23 @@
 <section class="fade-in">
   <h2>📲 Ready to Get Started?</h2>
   <p>Let’s build you a landing page that actually sells.</p>
-  <p>🚀 DM me now on <strong><a href="https://instagram.com/tyf.landingpages" target="_blank" style="color: #ff4500;"> Instagram </a></strong> or reply with "Let's go" in email and claim your spot before the offer expires.</p>
-  <p style="margin-top:15px;">Grab this exclusive deal now and watch your sales soar.</p>
+
+  <div style="display:flex; flex-direction:column; align-items:center; gap:15px; margin-top:15px;">
+    <!-- Instagram Button -->
+    <a href="https://instagram.com/tyf.landingpages" target="_blank" class="btn btn-instagram">
+      DM me on Instagram
+    </a>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/213676127853" target="_blank" class="btn btn-whatsapp">
+      Chat on WhatsApp
+    </a>
+
+    <!-- Email text -->
+    <p style="margin-top:10px; color:#ff4500; font-weight:bold;">
+      Or reply to my email – "Let's go"!
+    </p>
+  </div>
 </section>
 
 <footer>
