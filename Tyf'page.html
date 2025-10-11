@@ -1,51 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" type="image/png" href="favicon.png">
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TYF | Ultimate Landing Page</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TYF | High-Converting Landing Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Roboto', sans-serif; background: #000; color: #fff; overflow-x: hidden; }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Roboto', sans-serif; background:#0d0d0d; color:#fff; overflow-x:hidden; }
+    section { max-width:1200px; margin:80px auto; padding:0 20px; }
+    section h2 { font-size:2.2rem; margin-bottom:20px; text-align:center; color:#ff4500; }
+    section p { font-size:1.1rem; line-height:1.7; text-align:center; margin-bottom:30px; color:#fff; }
 
-    section { max-width: 1200px; margin: 80px auto; padding: 0 20px; }
-    section h2 { font-size: 2.2rem; margin-bottom: 20px; text-align: center; color: #ff4500; }
-    section p { font-size: 1.1rem; line-height: 1.7; text-align: center; margin-bottom: 30px; color: #fff; }
+    .features { display:flex; flex-wrap:wrap; justify-content:center; gap:40px; margin-top:50px; }
+    .feature-card { flex:1 1 300px; background:#1a1a1a; padding:30px; border-radius:15px; box-shadow:0 10px 25px rgba(255,69,0,0.2); text-align:center; transition:transform 0.3s; }
+    .feature-card:hover { transform:translateY(-10px); }
+    .feature-card h3 { font-size:1.5rem; margin-bottom:15px; color:#ff4500; }
+    .feature-card p { color:#fff; }
 
-    .features { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; margin-top: 50px; }
-    .feature-card { flex: 1 1 300px; background: #111; padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(255, 69, 0, 0.15); text-align: center; transition: transform 0.3s; }
-    .feature-card:hover { transform: translateY(-10px); }
-    .feature-card h3 { font-size: 1.5rem; margin-bottom: 15px; color: #ff4500; }
-    .feature-card p { color: #fff; }
+    .testimonials { display:flex; flex-direction:column; gap:25px; max-width:800px; margin:0 auto 50px; }
+    .testimonial-card { background:#1a1a1a; padding:25px 30px; border-radius:15px; box-shadow:0 10px 25px rgba(255,69,0,0.2); color:#fff; font-style:italic; position:relative; }
+    .testimonial-card::before { content:"“"; font-size:3rem; color:#ff4500; position:absolute; top:10px; left:20px; font-weight:bold; font-style:normal; }
+    .testimonial-author { margin-top:15px; font-weight:700; text-align:right; color:#ff4500; font-style:normal; }
 
-    .testimonials { display: flex; flex-direction: column; gap: 25px; max-width: 800px; margin: 0 auto 50px; }
-    .testimonial-card { background: #111; padding: 25px 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(255, 69, 0, 0.15); color: #fff; font-style: italic; position: relative; }
-    .testimonial-card::before { content: "“"; font-size: 3rem; color: #ff4500; position: absolute; top: 10px; left: 20px; font-weight: bold; font-style: normal; }
-    .testimonial-author { margin-top: 15px; font-weight: 700; text-align: right; color: #ff4500; font-style: normal; }
+    footer { text-align:center; padding:50px 20px; color:#777; font-size:0.9rem; border-top:1px solid #333; }
 
-    footer { text-align: center; padding: 50px 20px; color: #777; font-size: 0.9rem; border-top: 1px solid #333; }
+    .fade-in { opacity:0; transform:translateY(50px); transition:all 0.6s ease; }
+    .fade-in.show { opacity:1; transform:translateY(0); }
 
-    .fade-in { opacity: 0; transform: translateY(50px); transition: all 0.6s ease; }
-    .fade-in.show { opacity: 1; transform: translateY(0); }
+    .btn { padding:18px 35px; border-radius:12px; text-decoration:none; font-weight:bold; display:inline-block; transition:all 0.3s ease; background:#ff4500; color:#fff; font-size:1.3rem; }
+    .btn:hover { transform:translateY(-5px) scale(1.05); box-shadow:0 10px 25px rgba(255,69,0,0.4); opacity:0.95; }
 
-    .countdown-info { color: #ff4500; font-weight: bold; }
+    .countdown-info { color:#ff4500; font-weight:bold; font-size:1.1rem; margin-top:10px; }
 
-    .btn { padding: 15px 30px; border-radius: 8px; text-decoration: none; font-weight: bold; display: inline-block; transition: all 0.3s ease; text-align:center; font-size:1.2rem; background:#ff4500; color:#fff; }
-    .btn:hover { transform: translateY(-5px) scale(1.05); box-shadow: 0 8px 20px rgba(0,0,0,0.3); opacity: 0.9; }
-
-    #countdown { font-size: 2rem; font-weight: bold; color: #ff4500; background: #111; padding: 10px 20px; border-radius: 10px; display: inline-block; margin-top: 5px; box-shadow: 0 5px 15px rgba(255,69,0,0.3); }
   </style>
 </head>
 <body>
 
-<!-- CTA Top -->
+<!-- Top CTA -->
 <section class="fade-in">
-  <div style="display:flex; flex-direction:column; align-items:center; gap:15px; margin-top:15px;">
-    <a href="https://forms.gle/MF41XUaHP5Nyb5yE6" target="_blank" class="btn">
-      🚀 Claim Your 50% OFF Landing Page Now – Limited 48h!
-    </a>
+  <div style="display:flex; flex-direction:column; align-items:center; gap:10px; margin-bottom:50px;">
+    <a href="https://forms.gle/MF41XUaHP5Nyb5yE6" target="_blank" class="btn">🚀 Grab 50% OFF Now!</a>
+    <span class="countdown-info">Offer ends in <span id="countdown-top"></span> | 4/10 pages completed</span>
   </div>
 </section>
 
@@ -64,6 +60,14 @@
     <div class="feature-card"><h3>Responsive Design</h3><p>Optimized layouts for all devices to ensure a flawless experience.</p></div>
     <div class="feature-card"><h3>Fast Loading</h3><p>Lightweight and efficient pages that load instantly.</p></div>
     <div class="feature-card"><h3>SEO Optimization</h3><p>On-page SEO improvements to help your page rank higher.</p></div>
+  </div>
+</section>
+
+<!-- Middle CTA before About Me -->
+<section class="fade-in">
+  <div style="display:flex; flex-direction:column; align-items:center; gap:10px; margin:50px 0;">
+    <a href="https://forms.gle/MF41XUaHP5Nyb5yE6" target="_blank" class="btn">🚀 Grab 50% OFF Now!</a>
+    <span class="countdown-info">Offer ends in <span id="countdown-middle"></span> | 4/10 pages completed</span>
   </div>
 </section>
 
@@ -94,73 +98,67 @@
 <section class="fade-in">
   <h2>🎁 Limited-Time Offer</h2>
   <p>🚨 Regular Price: <s>1500 USD</s></p>
-  <p>
-    ✅ Now: <strong>750 USD</strong> (50% OFF) – Only for the first <strong>10 clients!</strong><br>
-    (Offer ends in <span id="countdown"></span> | <span class="countdown-info">4/10 pages completed</span>)
-  </p>
+  <p>✅ Now: <strong>750 USD</strong> (50% OFF) – Only for the first <strong>10 clients!</strong></p>
+  <p id="countdown-main">Offer ends in 00:00:00 | 4/10 pages completed</p>
 
   <p style="margin-top:25px; color:#ff4500; font-weight:bold;">🛡️ 1-Week Guarantee</p>
   <p>You’ll get a full week of <strong>unlimited edits & revisions</strong> after purchase — until you're 100% satisfied.</p>
 
   <p style="margin-top:15px; color:#ff4500; font-weight:bold;">💰 No Risk — Pay Only If You Love It</p>
   <p>You don’t pay a single dollar until you love your landing page. Zero risk, nothing to lose.</p>
-</section>
 
-<!-- CTA Bottom -->
-<section class="fade-in">
-  <div style="display:flex; flex-direction:column; align-items:center; gap:15px; margin-top:15px;">
-    <a href="https://forms.gle/MF41XUaHP5Nyb5yE6" target="_blank" class="btn">
-      🚀 Claim Your 50% OFF Landing Page Now – Limited 48h!
-    </a>
+  <!-- Bottom CTA -->
+  <div style="display:flex; flex-direction:column; align-items:center; gap:15px; margin-top:25px;">
+    <a href="https://forms.gle/MF41XUaHP5Nyb5yE6" target="_blank" class="btn">🚀 Grab 50% OFF Now!</a>
+    <span class="countdown-info">Offer ends in <span id="countdown-bottom"></span> | 4/10 pages completed</span>
   </div>
 </section>
 
 <footer>TYF | Landing Pages that Sell</footer>
 
 <script>
-  // Fade-in animation
   const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show');
-        observer.unobserve(entry.target);
-      }
+      if(entry.isIntersecting){ entry.target.classList.add('show'); observer.unobserve(entry.target); }
     });
-  }, { threshold: 0.15 });
+  }, { threshold:0.15 });
   document.querySelectorAll('.fade-in').forEach(section => observer.observe(section));
 
-  // Get next Sunday at 23:59:59
   function getNextSunday() {
     const now = new Date();
-    const day = now.getDay(); // Sunday = 0
-    const diff = (7 - day) % 7; // days until next Sunday
+    const day = now.getDay();
+    const diff = (7 - day) % 7;
     const nextSunday = new Date(now);
     nextSunday.setDate(now.getDate() + diff);
-    nextSunday.setHours(23, 59, 59, 999);
+    nextSunday.setHours(23,59,59,999);
     return nextSunday;
   }
 
-  // Countdown update
   function updateCountdown() {
-    const countdown = document.getElementById('countdown');
+    const countdownTop = document.getElementById('countdown-top');
+    const countdownMiddle = document.getElementById('countdown-middle');
+    const countdownBottom = document.getElementById('countdown-bottom');
+    const countdownMain = document.getElementById('countdown-main');
     const end = getNextSunday();
     const now = new Date();
     const diff = end - now;
 
-    if (diff <= 0) {
-      countdown.innerHTML = "<span style='color:#ff0000; font-weight:bold;'>⛔ Offer Ended! Wait for the next one.</span>";
-      return;
+    let text;
+    if(diff <= 0){ text="⛔ Offer Ended! Wait for the next one."; }
+    else{
+      const hours = Math.floor(diff/(1000*60*60));
+      const minutes = Math.floor((diff % (1000*60*60))/(1000*60));
+      const seconds = Math.floor((diff % (1000*60))/1000);
+      text=`${hours.toString().padStart(2,'0')}:${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
     }
 
-    const hours = Math.floor(diff / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-    countdown.textContent =
-      `${hours.toString().padStart(2,'0')}:${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
+    if(countdownTop) countdownTop.textContent = text;
+    if(countdownMiddle) countdownMiddle.textContent = text;
+    if(countdownBottom) countdownBottom.textContent = text;
+    if(countdownMain) countdownMain.textContent = text;
   }
 
-  setInterval(updateCountdown, 1000);
+  setInterval(updateCountdown,1000);
   updateCountdown();
 </script>
 
