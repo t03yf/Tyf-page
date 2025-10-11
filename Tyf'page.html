@@ -31,7 +31,21 @@
     .btn { padding:18px 35px; border-radius:12px; text-decoration:none; font-weight:bold; display:inline-block; transition:all 0.3s ease; background:#ff4500; color:#fff; font-size:1.3rem; }
     .btn:hover { transform:translateY(-5px) scale(1.05); box-shadow:0 10px 25px rgba(255,69,0,0.4); opacity:0.95; }
 
-    .countdown-info { color:#ff4500; font-weight:bold; font-size:1.1rem; margin-top:10px; }
+    .countdown-info {
+      color:#ffcc00;
+      font-weight:bold;
+      font-size:2rem;
+      margin-top:10px;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+      padding:15px 30px;
+      background:rgba(255,69,0,0.1);
+      border-radius:12px;
+      transition: all 0.3s ease;
+    }
+    .countdown-info:hover {
+      transform: scale(1.15) rotate(-2deg);
+      box-shadow:0 8px 25px rgba(255,69,0,0.6);
+    }
 
   </style>
 </head>
@@ -99,7 +113,7 @@
   <h2>🎁 Limited-Time Offer</h2>
   <p>🚨 Regular Price: <s>1500 USD</s></p>
   <p>✅ Now: <strong>750 USD</strong> (50% OFF) – Only for the first <strong>10 clients!</strong></p>
-  <p id="countdown-main">Offer ends in 00:00:00 | 4/10 pages completed</p>
+  <p class="countdown-info">Offer ends in <span id="countdown-bottom"></span> | 4/10 pages completed</p>
 
   <p style="margin-top:25px; color:#ff4500; font-weight:bold;">🛡️ 1-Week Guarantee</p>
   <p>You’ll get a full week of <strong>unlimited edits & revisions</strong> after purchase — until you're 100% satisfied.</p>
@@ -110,7 +124,6 @@
   <!-- Bottom CTA -->
   <div style="display:flex; flex-direction:column; align-items:center; gap:15px; margin-top:25px;">
     <a href="https://forms.gle/MF41XUaHP5Nyb5yE6" target="_blank" class="btn">🚀 Grab 50% OFF Now!</a>
-    <span class="countdown-info">Offer ends in <span id="countdown-bottom"></span> | 4/10 pages completed</span>
   </div>
 </section>
 
@@ -138,26 +151,21 @@
     const countdownTop = document.getElementById('countdown-top');
     const countdownMiddle = document.getElementById('countdown-middle');
     const countdownBottom = document.getElementById('countdown-bottom');
-    const countdownMain = document.getElementById('countdown-main');
     const end = getNextSunday();
     const now = new Date();
     const diff = end - now;
-
     let text;
-    if(diff <= 0){ text="⛔ Offer Ended! Wait for the next one."; }
+    if(diff<=0){ text="⛔ Offer Ended! Wait for the next one."; }
     else{
       const hours = Math.floor(diff/(1000*60*60));
       const minutes = Math.floor((diff % (1000*60*60))/(1000*60));
       const seconds = Math.floor((diff % (1000*60))/1000);
       text=`${hours.toString().padStart(2,'0')}:${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
     }
-
     if(countdownTop) countdownTop.textContent = text;
     if(countdownMiddle) countdownMiddle.textContent = text;
     if(countdownBottom) countdownBottom.textContent = text;
-    if(countdownMain) countdownMain.textContent = text;
   }
-
   setInterval(updateCountdown,1000);
   updateCountdown();
 </script>
