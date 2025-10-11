@@ -10,123 +10,44 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Roboto', sans-serif; background: #000; color: #fff; overflow-x: hidden; }
 
-    section {
-      max-width: 1200px;
-      margin: 80px auto;
-      padding: 0 20px;
-    }
-    section h2 {
-      font-size: 2.2rem;
-      margin-bottom: 20px;
-      text-align: center;
-      color: #ff4500;
-    }
-    section p {
-      font-size: 1.1rem;
-      line-height: 1.7;
-      text-align: center;
-      margin-bottom: 30px;
-      color: #fff;
-    }
+    section { max-width: 1200px; margin: 80px auto; padding: 0 20px; }
+    section h2 { font-size: 2.2rem; margin-bottom: 20px; text-align: center; color: #ff4500; }
+    section p { font-size: 1.1rem; line-height: 1.7; text-align: center; margin-bottom: 30px; color: #fff; }
 
-    .features {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 40px;
-      margin-top: 50px;
-    }
-    .feature-card {
-      flex: 1 1 300px;
-      background: #111;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 10px 25px rgba(255, 69, 0, 0.15);
-      text-align: center;
-      transition: transform 0.3s;
-    }
+    .features { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; margin-top: 50px; }
+    .feature-card { flex: 1 1 300px; background: #111; padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(255, 69, 0, 0.15); text-align: center; transition: transform 0.3s; }
     .feature-card:hover { transform: translateY(-10px); }
     .feature-card h3 { font-size: 1.5rem; margin-bottom: 15px; color: #ff4500; }
     .feature-card p { color: #fff; }
 
-    .testimonials {
-      display: flex;
-      flex-direction: column;
-      gap: 25px;
-      max-width: 800px;
-      margin: 0 auto 50px;
-    }
-    .testimonial-card {
-      background: #111;
-      padding: 25px 30px;
-      border-radius: 15px;
-      box-shadow: 0 10px 25px rgba(255, 69, 0, 0.15);
-      color: #fff;
-      font-style: italic;
-      position: relative;
-    }
-    .testimonial-card::before {
-      content: "“";
-      font-size: 3rem;
-      color: #ff4500;
-      position: absolute;
-      top: 10px;
-      left: 20px;
-      font-weight: bold;
-      font-style: normal;
-    }
-    .testimonial-author {
-      margin-top: 15px;
-      font-weight: 700;
-      text-align: right;
-      color: #ff4500;
-      font-style: normal;
-    }
+    .testimonials { display: flex; flex-direction: column; gap: 25px; max-width: 800px; margin: 0 auto 50px; }
+    .testimonial-card { background: #111; padding: 25px 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(255, 69, 0, 0.15); color: #fff; font-style: italic; position: relative; }
+    .testimonial-card::before { content: "“"; font-size: 3rem; color: #ff4500; position: absolute; top: 10px; left: 20px; font-weight: bold; font-style: normal; }
+    .testimonial-author { margin-top: 15px; font-weight: 700; text-align: right; color: #ff4500; font-style: normal; }
 
-    footer {
-      text-align: center;
-      padding: 50px 20px;
-      color: #777;
-      font-size: 0.9rem;
-      border-top: 1px solid #333;
-    }
+    footer { text-align: center; padding: 50px 20px; color: #777; font-size: 0.9rem; border-top: 1px solid #333; }
 
     .fade-in { opacity: 0; transform: translateY(50px); transition: all 0.6s ease; }
     .fade-in.show { opacity: 1; transform: translateY(0); }
 
     .countdown-info { color: #ff4500; font-weight: bold; }
 
-    .btn {
-      padding: 12px 25px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      display: inline-block;
-      transition: all 0.3s ease;
-    }
-    .btn-instagram { background:#ff4500; color:#fff; }
-    .btn-whatsapp { background:#25D366; color:#fff; }
+    .btn { padding: 15px 30px; border-radius: 8px; text-decoration: none; font-weight: bold; display: inline-block; transition: all 0.3s ease; text-align:center; font-size:1.2rem; background:#ff4500; color:#fff; }
+    .btn:hover { transform: translateY(-5px) scale(1.05); box-shadow: 0 8px 20px rgba(0,0,0,0.3); opacity: 0.9; }
 
-    .btn:hover {
-      transform: translateY(-5px) scale(1.05);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-      opacity: 0.9;
-    }
-
-    #countdown {
-      font-size: 2rem;
-      font-weight: bold;
-      color: #ff4500;
-      background: #111;
-      padding: 10px 20px;
-      border-radius: 10px;
-      display: inline-block;
-      margin-top: 5px;
-      box-shadow: 0 5px 15px rgba(255,69,0,0.3);
-    }
+    #countdown { font-size: 2rem; font-weight: bold; color: #ff4500; background: #111; padding: 10px 20px; border-radius: 10px; display: inline-block; margin-top: 5px; box-shadow: 0 5px 15px rgba(255,69,0,0.3); }
   </style>
 </head>
 <body>
+
+<!-- CTA Top -->
+<section class="fade-in">
+  <div style="display:flex; flex-direction:column; align-items:center; gap:15px; margin-top:15px;">
+    <a href="https://forms.gle/MF41XUaHP5Nyb5yE6" target="_blank" class="btn">
+      🚀 Claim Your 50% OFF Landing Page Now – Limited 48h!
+    </a>
+  </div>
+</section>
 
 <section class="fade-in">
   <h2>🎯 Your Current Problem</h2>
@@ -185,13 +106,12 @@
   <p>You don’t pay a single dollar until you love your landing page. Zero risk, nothing to lose.</p>
 </section>
 
+<!-- CTA Bottom -->
 <section class="fade-in">
-  <h2>📲 Ready to Get Started?</h2>
-  <p>Let’s build you a landing page that actually sells.</p>
   <div style="display:flex; flex-direction:column; align-items:center; gap:15px; margin-top:15px;">
-    <a href="https://instagram.com/tyf.landingpages" target="_blank" class="btn btn-instagram">DM me on Instagram</a>
-    <a href="https://wa.me/213676127853" target="_blank" class="btn btn-whatsapp">Chat on WhatsApp</a>
-    <p style="margin-top:10px; color:#ff4500; font-weight:bold;">Or Just reply ‘Let’s go’ and I’ll send you a quick plan for your page"</p>
+    <a href="https://forms.gle/MF41XUaHP5Nyb5yE6" target="_blank" class="btn">
+      🚀 Claim Your 50% OFF Landing Page Now – Limited 48h!
+    </a>
   </div>
 </section>
 
@@ -246,4 +166,3 @@
 
 </body>
 </html>
-
