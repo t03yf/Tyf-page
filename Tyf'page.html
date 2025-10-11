@@ -78,6 +78,10 @@
     <div class="feature-card"><h3>Responsive Design</h3><p>Optimized layouts for all devices to ensure a flawless experience.</p></div>
     <div class="feature-card"><h3>Fast Loading</h3><p>Lightweight and efficient pages that load instantly.</p></div>
     <div class="feature-card"><h3>SEO Optimization</h3><p>On-page SEO improvements to help your page rank higher.</p></div>
+
+    <!-- 🆕 New Features -->
+    <div class="feature-card"><h3>Lead Capture System</h3><p>Built-in form that automatically collects your clients’ information — name, email, and phone — and sends it straight to you. No missed leads, ever.</p></div>
+    <div class="feature-card"><h3>Psychology-Based Design</h3><p>Every section is strategically designed using proven marketing psychology — from colors to structure — to make visitors trust and buy faster.</p></div>
   </div>
 </section>
 
@@ -141,21 +145,22 @@
   }, { threshold:0.15 });
   document.querySelectorAll('.fade-in').forEach(section => observer.observe(section));
 
-  function getNextSunday() {
+  // ⏰ Countdown adjusted to Monday 23:59:59
+  function getNextMonday() {
     const now = new Date();
     const day = now.getDay();
-    const diff = (7 - day) % 7;
-    const nextSunday = new Date(now);
-    nextSunday.setDate(now.getDate() + diff);
-    nextSunday.setHours(23,59,59,999);
-    return nextSunday;
+    const diff = (1 - day + 7) % 7; // Monday = 1
+    const nextMonday = new Date(now);
+    nextMonday.setDate(now.getDate() + diff);
+    nextMonday.setHours(23,59,59,999);
+    return nextMonday;
   }
 
   function updateCountdown() {
     const countdownTop = document.getElementById('countdown-top');
     const countdownMiddle = document.getElementById('countdown-middle');
     const countdownBottom = document.getElementById('countdown-bottom');
-    const end = getNextSunday();
+    const end = getNextMonday();
     const now = new Date();
     const diff = end - now;
     let text;
