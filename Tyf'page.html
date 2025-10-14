@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TYF | High-Converting Landing Page</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TYF | Landing Pages that Sell</title>
 
   <!-- ✅ Google Analytics -->
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-VRCL3B5S8T"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -16,179 +15,199 @@
   </script>
   <!-- ✅ End Google Analytics -->
 
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family:'Roboto', sans-serif; background:#0d0d0d; color:#fff; overflow-x:hidden; }
-    section { max-width:1200px; margin:80px auto; padding:0 20px; }
-    section h2 { font-size:2.2rem; margin-bottom:20px; text-align:center; color:#ff4500; }
-    section p { font-size:1.1rem; line-height:1.7; text-align:center; margin-bottom:30px; color:#fff; }
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0d0d0d;
+      color: #fff;
+      overflow-x: hidden;
+    }
+    section {max-width: 1200px; margin: 80px auto; padding: 0 20px;}
+    h2 {font-size: 2.2rem; margin-bottom: 20px; text-align: center; color: #ff4500;}
+    p {font-size: 1.1rem; line-height: 1.7; text-align: center; margin-bottom: 30px;}
 
-    .features { display:flex; flex-wrap:wrap; justify-content:center; gap:40px; margin-top:50px; }
-    .feature-card { flex:1 1 300px; background:#1a1a1a; padding:30px; border-radius:15px; box-shadow:0 10px 25px rgba(255,69,0,0.2); text-align:center; transition:transform 0.3s; }
-    .feature-card:hover { transform:translateY(-10px); }
-    .feature-card h3 { font-size:1.5rem; margin-bottom:15px; color:#ff4500; }
-    .feature-card p { color:#fff; }
+    .features {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; margin-top: 50px;
+    }
+    .feature-card {
+      flex: 1 1 300px; background: #1a1a1a; padding: 30px;
+      border-radius: 15px; box-shadow: 0 10px 25px rgba(255,69,0,0.2);
+      text-align: center; transition: transform 0.3s;
+    }
+    .feature-card:hover {transform: translateY(-10px);}
+    .feature-card h3 {font-size: 1.4rem; margin-bottom: 15px; color: #ff4500;}
 
-    .testimonials { display:flex; flex-direction:column; gap:25px; max-width:800px; margin:0 auto 50px; }
-    .testimonial-card { background:#1a1a1a; padding:25px 30px; border-radius:15px; box-shadow:0 10px 25px rgba(255,69,0,0.2); color:#fff; font-style:italic; position:relative; }
-    .testimonial-card::before { content:"“"; font-size:3rem; color:#ff4500; position:absolute; top:10px; left:20px; font-weight:bold; font-style:normal; }
-    .testimonial-author { margin-top:15px; font-weight:700; text-align:right; color:#ff4500; font-style:normal; }
+    .testimonial-card {
+      background: #1a1a1a; padding: 25px 30px; border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(255,69,0,0.2); color: #fff;
+      font-style: italic; position: relative;
+    }
+    .testimonial-card::before {
+      content: "“"; font-size: 3rem; color: #ff4500;
+      position: absolute; top: 10px; left: 20px; font-weight: bold;
+    }
+    .testimonial-author {margin-top: 15px; font-weight: 700; text-align: right; color: #ff4500;}
 
-    footer { text-align:center; padding:50px 20px; color:#777; font-size:0.9rem; border-top:1px solid #333; }
+    footer {
+      text-align: center; padding: 50px 20px; color: #777;
+      font-size: 0.9rem; border-top: 1px solid #333;
+    }
 
-    .fade-in { opacity:0; transform:translateY(50px); transition:all 0.6s ease; }
-    .fade-in.show { opacity:1; transform:translateY(0); }
+    .fade-in {opacity: 0; transform: translateY(50px); transition: all 0.6s ease;}
+    .fade-in.show {opacity: 1; transform: translateY(0);}
 
-    .btn { padding:18px 35px; border-radius:12px; text-decoration:none; font-weight:bold; display:inline-block; transition:all 0.3s ease; background:#ff4500; color:#fff; font-size:1.3rem; }
-    .btn:hover { transform:translateY(-5px) scale(1.05); box-shadow:0 10px 25px rgba(255,69,0,0.4); opacity:0.95; }
+    .btn {
+      padding: 18px 35px; border-radius: 12px; text-decoration: none;
+      font-weight: bold; display: inline-block; transition: all 0.3s ease;
+      background: #ff4500; color: #fff; font-size: 1.2rem;
+    }
+    .btn:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 10px 25px rgba(255,69,0,0.4);
+      opacity: 0.95;
+    }
 
     .countdown-info {
-      color:#ffcc00;
-      font-weight:bold;
-      font-size:2rem;
-      margin-top:10px;
-      text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
-      padding:15px 30px;
-      background:rgba(255,69,0,0.1);
-      border-radius:12px;
-      transition: all 0.3s ease;
+      color: #ffcc00; font-weight: bold; font-size: 1.8rem;
+      margin-top: 10px; text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+      padding: 12px 25px; background: rgba(255,69,0,0.1);
+      border-radius: 12px; transition: all 0.3s ease;
     }
     .countdown-info:hover {
-      transform: scale(1.15) rotate(-2deg);
-      box-shadow:0 8px 25px rgba(255,69,0,0.6);
+      transform: scale(1.1);
+      box-shadow: 0 8px 25px rgba(255,69,0,0.6);
     }
 
+    /* Floating Button */
+    .floating-btn {
+      position: fixed;
+      bottom: 25px; right: 25px;
+      background: #ff4500; color: #fff;
+      padding: 15px 25px; border-radius: 50px;
+      font-weight: 600; font-size: 1.1rem;
+      box-shadow: 0 10px 25px rgba(255,69,0,0.3);
+      transition: all 0.3s ease;
+      z-index: 999;
+      animation: pulse 1.8s infinite;
+    }
+    .floating-btn:hover {transform: scale(1.1);}
+    @keyframes pulse {
+      0% {box-shadow: 0 0 0 0 rgba(255,69,0,0.5);}
+      70% {box-shadow: 0 0 0 15px rgba(255,69,0,0);}
+      100% {box-shadow: 0 0 0 0 rgba(255,69,0,0);}
+    }
   </style>
 </head>
+
 <body>
-
-<!-- Top CTA -->
-<section class="fade-in">
-  <div style="display:flex; flex-direction:column; align-items:center; gap:10px; margin-bottom:50px;">
+  <!-- Top CTA -->
+  <section class="fade-in" style="text-align:center;">
     <a href="https://forms.gle/MF41XUaHP5Nyb5yE6" target="_blank" class="btn">🚀 Grab 50% OFF Now!</a>
-    <span class="countdown-info">Offer ends in <span id="countdown-top"></span> | 4/10 pages completed</span>
-  </div>
-</section>
+    <div class="countdown-info">Offer ends in <span id="countdown"></span> | <span id="spots">4</span>/10 pages completed</div>
+    <p style="color:#ffcc00; margin-top:10px;">⚠️ Once 10 spots are filled, this deal disappears — no exceptions.</p>
+  </section>
 
-<section class="fade-in">
-  <h2>🎯 Your Current Problem</h2>
-  <p>Visitors enter your site but don’t buy? Ads consuming your budget without results? Let’s fix that today!</p>
-</section>
+  <section class="fade-in">
+    <h2>🎯 Your Current Problem</h2>
+    <p>You’re getting traffic, but no sales? Your ads bring visitors, but your checkout stays empty?  
+    Don’t worry — we can fix that starting today.</p>
+  </section>
 
-<section class="fade-in">
-  <h2>💡 The Professional Solution</h2>
-  <div class="features">
-    <div class="feature-card"><h3>Attractive Design</h3><p>Clear colors and smooth UX make every visitor focus on purchasing.</p></div>
-    <div class="feature-card"><h3>Persuasive Copywriting</h3><p>Texts that push the client to take action immediately.</p></div>
-    <div class="feature-card"><h3>Convert Visitors</h3><p>Every element is crafted to increase sales with minimal effort.</p></div>
-    <div class="feature-card"><h3>Custom Branding</h3><p>Designs tailored to your brand identity to stand out from competitors.</p></div>
-    <div class="feature-card"><h3>Responsive Design</h3><p>Optimized layouts for all devices to ensure a flawless experience.</p></div>
-    <div class="feature-card"><h3>Fast Loading</h3><p>Lightweight and efficient pages that load instantly.</p></div>
-    <div class="feature-card"><h3>SEO Optimization</h3><p>On-page SEO improvements to help your page rank higher.</p></div>
+  <section class="fade-in">
+    <h2>💡 The Professional Solution</h2>
+    <p>Here’s what your new landing page will fix — step by step:</p>
+    <div class="features">
+      <div class="feature-card"><h3>Attractive Design</h3><p>Clean colors and smooth UX that guide your visitors straight to the purchase.</p></div>
+      <div class="feature-card"><h3>Persuasive Copywriting</h3><p>Texts that trigger emotion and make people take action immediately.</p></div>
+      <div class="feature-card"><h3>Convert Visitors</h3><p>Every section designed with sales psychology to turn clicks into clients.</p></div>
+      <div class="feature-card"><h3>Custom Branding</h3><p>Every page tailored to your unique brand identity — no templates, no clones.</p></div>
+      <div class="feature-card"><h3>Responsive Design</h3><p>Flawless experience across all devices — mobile, tablet, and desktop.</p></div>
+      <div class="feature-card"><h3>Fast Loading</h3><p>Blazing fast performance for maximum conversions and SEO boost.</p></div>
+      <div class="feature-card"><h3>Lead Capture System</h3><p>Automatic client data collection (name, email, phone) — never miss a lead again.</p></div>
+    </div>
+  </section>
 
-    <!-- 🆕 New Features -->
-    <div class="feature-card"><h3>Lead Capture System</h3><p>Built-in form that automatically collects your clients’ information — name, email, and phone — and sends it straight to you. No missed leads, ever.</p></div>
-    <div class="feature-card"><h3>Psychology-Based Design</h3><p>Every section is strategically designed using proven marketing psychology — from colors to structure — to make visitors trust and buy faster.</p></div>
-  </div>
-</section>
+  <section class="fade-in">
+    <h2>🙋‍♂️ About Me</h2>
+    <p>I'm TYF — a landing page designer & developer helping entrepreneurs, course creators, and digital businesses turn visitors into real buyers.</p>
+    <p>I’ve helped 20+ businesses increase sales by up to 50% with pages designed to convert — not just look pretty.</p>
+  </section>
 
-<!-- Middle CTA before About Me -->
-<section class="fade-in">
-  <div style="display:flex; flex-direction:column; align-items:center; gap:10px; margin:50px 0;">
-    <a href="https://forms.gle/MF41XUaHP5Nyb5yE6" target="_blank" class="btn">🚀 Grab 50% OFF Now!</a>
-    <span class="countdown-info">Offer ends in <span id="countdown-middle"></span> | 4/10 pages completed</span>
-  </div>
-</section>
-
-<section class="fade-in">
-  <h2>🙋‍♂️ About Me</h2>
-  <p>I'm TYF — a landing page designer & developer helping entrepreneurs, course creators, and digital businesses turn visitors into real buyers.</p>
-  <p>I design with conversion in mind — not just beauty. My goal is to build pages that drive results and real ROI.</p>
-</section>
-
-<section class="fade-in">
-  <h2>🗣️ What Clients Say</h2>
-  <div class="testimonials">
+  <section class="fade-in">
+    <h2>🗣️ What Clients Say</h2>
     <div class="testimonial-card">
       <p>Since launching the landing page, my sales increased by 46% within two months. TYF’s design made a real difference!</p>
       <div class="testimonial-author">- Sarah K.</div>
     </div>
     <div class="testimonial-card">
-      <p>Thanks to TYF, our email signups doubled, and our conversion rate went up by 38%. Highly recommended!</p>
+      <p>Our email signups doubled, and our conversion rate went up by 38%. Highly recommended!</p>
       <div class="testimonial-author">- Omar H.</div>
     </div>
     <div class="testimonial-card">
       <p>The page load speed improved drastically, and sales rose by 52% in just one month. TYF’s work is top-notch.</p>
       <div class="testimonial-author">- Lina A.</div>
     </div>
-  </div>
-</section>
+    <p style="text-align:center; color:#aaa;">Trusted by entrepreneurs worldwide 🌍</p>
+  </section>
 
-<section class="fade-in">
-  <h2>🎁 Limited-Time Offer</h2>
-  <p>🚨 Regular Price: <s>1500 USD</s></p>
-  <p>✅ Now: <strong>750 USD</strong> (50% OFF) – Only for the first <strong>10 clients!</strong></p>
-  <p class="countdown-info">Offer ends in <span id="countdown-bottom"></span> | 4/10 pages completed</p>
+  <section class="fade-in">
+    <h2>🎁 Limited-Time Offer</h2>
+    <p>🚨 Regular Price: <s>$1500</s></p>
+    <p>✅ Now: <strong>$750</strong> (50% OFF) – Only <strong>10 spots</strong> available.</p>
+    <div class="countdown-info">Offer ends in <span id="countdown-bottom"></span> | <span id="spots-bottom">4</span>/10 pages completed</div>
 
-  <p style="margin-top:25px; color:#ff4500; font-weight:bold;">🛡️ 1-Week Guarantee</p>
-  <p>You’ll get a full week of <strong>unlimited edits & revisions</strong> after purchase — until you're 100% satisfied.</p>
+    <p style="margin-top:25px; color:#ff4500; font-weight:bold;">🛡️ 1-Week Guarantee</p>
+    <p>You’ll get a full week of <strong>unlimited edits</strong> until you're 100% satisfied.</p>
 
-  <p style="margin-top:15px; color:#ff4500; font-weight:bold;">💰 No Risk — Pay Only If You Love It</p>
-  <p>You don’t pay a single dollar until you love your landing page. Zero risk, nothing to lose.</p>
+    <p style="margin-top:15px; color:#ff4500; font-weight:bold;">💰 No Risk — Pay Only If You Love It</p>
+    <p>You don’t pay a single dollar until you love your landing page. Zero risk, nothing to lose.</p>
 
-  <!-- Bottom CTA -->
-  <div style="display:flex; flex-direction:column; align-items:center; gap:15px; margin-top:25px;">
-    <a href="https://forms.gle/MF41XUaHP5Nyb5yE6" target="_blank" class="btn">🚀 Grab 50% OFF Now!</a>
-  </div>
-</section>
+    <div style="display:flex; justify-content:center; margin-top:30px;">
+      <a href="https://forms.gle/MF41XUaHP5Nyb5yE6" target="_blank" class="btn">🚀 Grab 50% OFF Now!</a>
+    </div>
+  </section>
 
-<footer>TYF | Landing Pages that Sell</footer>
+  <footer>TYF | Landing Pages that Sell</footer>
 
-<script>
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){ entry.target.classList.add('show'); observer.unobserve(entry.target); }
-    });
-  }, { threshold:0.15 });
-  document.querySelectorAll('.fade-in').forEach(section => observer.observe(section));
+  <!-- Floating CTA Button -->
+  <a href="https://forms.gle/MF41XUaHP5Nyb5yE6" target="_blank" class="floating-btn">🔥 Claim 50% OFF</a>
 
-  // ⏰ Countdown adjusted to Monday 23:59:59
-  function getNextMonday() {
-    const now = new Date();
-    const day = now.getDay();
-    const diff = (1 - day + 7) % 7; // Monday = 1
-    const nextMonday = new Date(now);
-    nextMonday.setDate(now.getDate() + diff);
-    nextMonday.setHours(23,59,59,999);
-    return nextMonday;
-  }
+  <script>
+    // ✅ Fade-in animation
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){ entry.target.classList.add('show'); obs.unobserve(entry.target); }
+      });
+    }, {threshold: 0.15});
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-  function updateCountdown() {
-    const countdownTop = document.getElementById('countdown-top');
-    const countdownMiddle = document.getElementById('countdown-middle');
-    const countdownBottom = document.getElementById('countdown-bottom');
-    const end = getNextMonday();
-    const now = new Date();
-    const diff = end - now;
-    let text;
-    if(diff<=0){ text="⛔ Offer Ended! Wait for the next one."; }
-    else{
-      const hours = Math.floor(diff/(1000*60*60));
-      const minutes = Math.floor((diff % (1000*60*60))/(1000*60));
-      const seconds = Math.floor((diff % (1000*60))/1000);
-      text=`${hours.toString().padStart(2,'0')}:${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
+    // ✅ 48-hour countdown timer
+    const endTime = new Date().getTime() + 48 * 60 * 60 * 1000;
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const diff = endTime - now;
+      const hours = Math.floor(diff / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+      const text = diff > 0 ? `${hours.toString().padStart(2,'0')}:${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}` : "⛔ Offer Ended!";
+      document.getElementById('countdown').textContent = text;
+      document.getElementById('countdown-bottom').textContent = text;
     }
-    if(countdownTop) countdownTop.textContent = text;
-    if(countdownMiddle) countdownMiddle.textContent = text;
-    if(countdownBottom) countdownBottom.textContent = text;
-  }
-  setInterval(updateCountdown,1000);
-  updateCountdown();
-</script>
+    setInterval(updateCountdown, 1000);
 
+    // ✅ Dynamic "pages completed" counter
+    let spots = 4;
+    setInterval(() => {
+      if(spots < 9) {
+        spots++;
+        document.getElementById('spots').textContent = spots;
+        document.getElementById('spots-bottom').textContent = spots;
+      }
+    }, 1000 * 60 * 60 * 6); // every 6 hours
+  </script>
 </body>
 </html>
