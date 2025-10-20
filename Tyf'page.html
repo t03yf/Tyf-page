@@ -5,16 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TYF | Landing Pages that Sell</title>
 
-  <!-- ✅ Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VRCL3B5S8T"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-VRCL3B5S8T');
-  </script>
-  <!-- ✅ End Google Analytics -->
-
   <link rel="icon" type="image/png" href="favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -106,9 +96,8 @@
 <body>
   <!-- Top CTA -->
   <section class="fade-in" style="text-align:center;">
-    <a href="https://forms.gle/MF41XUaHP5Nyb5yE6" target="_blank" class="btn">🚀 Grab 50% OFF Now!</a>
-    <div class="countdown-info">Offer ends in <span id="countdown"></span> | <span id="spots">4</span>/10 pages completed</div>
-    <p style="color:#ffcc00; margin-top:10px;">⚠️ Once 10 spots are filled, this deal disappears — no exceptions.</p>
+    <a href="https://wa.me/213676127853" target="_blank" class="btn">🚀 Grab 50% OFF Now!</a>
+    <p style="color:#ffcc00; margin-top:10px;">⚠️ Once <strong>15 spots</strong> are filled, this deal disappears — no exceptions.</p>
   </section>
 
   <section class="fade-in">
@@ -157,8 +146,7 @@
   <section class="fade-in">
     <h2>🎁 Limited-Time Offer</h2>
     <p>🚨 Regular Price: <s>$1500</s></p>
-    <p>✅ Now: <strong>$750</strong> (50% OFF) – Only <strong>10 spots</strong> available.</p>
-    <div class="countdown-info">Offer ends in <span id="countdown-bottom"></span> | <span id="spots-bottom">4</span>/10 pages completed</div>
+    <p>✅ Now: <strong>$750</strong> (50% OFF) – Only <strong>15 spots</strong> available.</p>
 
     <p style="margin-top:25px; color:#ff4500; font-weight:bold;">🛡️ 1-Week Guarantee</p>
     <p>You’ll get a full week of <strong>unlimited edits</strong> until you're 100% satisfied.</p>
@@ -167,14 +155,14 @@
     <p>You don’t pay a single dollar until you love your landing page. Zero risk, nothing to lose.</p>
 
     <div style="display:flex; justify-content:center; margin-top:30px;">
-      <a href="https://forms.gle/MF41XUaHP5Nyb5yE6" target="_blank" class="btn">🚀 Grab 50% OFF Now!</a>
+      <a href="https://wa.me/213676127853" target="_blank" class="btn">🚀 Grab 50% OFF Now!</a>
     </div>
   </section>
 
   <footer>TYF | Landing Pages that Sell</footer>
 
   <!-- Floating CTA Button -->
-  <a href="https://forms.gle/MF41XUaHP5Nyb5yE6" target="_blank" class="floating-btn">🔥 Claim 50% OFF</a>
+  <a href="https://wa.me/213676127853" target="_blank" class="floating-btn">🔥 Claim 50% OFF</a>
 
   <script>
     // ✅ Fade-in animation
@@ -184,30 +172,6 @@
       });
     }, {threshold: 0.15});
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-    // ✅ 48-hour countdown timer
-    const endTime = new Date().getTime() + 48 * 60 * 60 * 1000;
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const diff = endTime - now;
-      const hours = Math.floor(diff / (1000 * 60 * 60));
-      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-      const text = diff > 0 ? `${hours.toString().padStart(2,'0')}:${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}` : "⛔ Offer Ended!";
-      document.getElementById('countdown').textContent = text;
-      document.getElementById('countdown-bottom').textContent = text;
-    }
-    setInterval(updateCountdown, 1000);
-
-    // ✅ Dynamic "pages completed" counter
-    let spots = 4;
-    setInterval(() => {
-      if(spots < 9) {
-        spots++;
-        document.getElementById('spots').textContent = spots;
-        document.getElementById('spots-bottom').textContent = spots;
-      }
-    }, 1000 * 60 * 60 * 6); // every 6 hours
   </script>
 </body>
 </html>
