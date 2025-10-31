@@ -52,19 +52,6 @@
       opacity: 0.95;
     }
 
-    /* Countdown */
-    .countdown-info {
-      color: #ffcc00; font-weight: bold; font-size: 1.8rem;
-      margin-top: 10px; text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
-      padding: 12px 25px; background: rgba(255,69,0,0.1);
-      border-radius: 12px; transition: all 0.3s ease;
-      display:inline-block;
-    }
-    .countdown-info:hover {
-      transform: scale(1.1);
-      box-shadow: 0 8px 25px rgba(255,69,0,0.6);
-    }
-
     /* Floating Button */
     .floating-btn {
       position: fixed;
@@ -95,7 +82,6 @@
   <!-- Top CTA -->
   <section class="fade-in" style="text-align:center;">
     <a href="https://wa.me/213676127853" target="_blank" class="btn">🚀 Grab 50% OFF Now!</a>
-    <p style="color:#ffcc00; margin-top:10px;">⚠️ Only <strong>15 spots</strong> left — this deal disappears fast!</p>
   </section>
 
   <!-- Problem -->
@@ -133,8 +119,7 @@
   <section class="fade-in">
     <h2>🎁 Limited-Time Offer</h2>
     <p>🚨 Regular Price: <s>$1500</s></p>
-    <p>✅ Now: <strong>$750</strong> (50% OFF) – Only <strong>15 spots</strong> available.</p>
-    <p class="countdown-info" id="countdown">⏳ 15 spots left</p>
+    <p>✅ Now: <strong>$750</strong> (50% OFF)</p>
 
     <p style="margin-top:25px; color:#ff4500; font-weight:bold;">🛡️ 1-Week Guarantee</p>
     <p>You’ll get a full week of <strong>unlimited edits</strong> until you're 100% satisfied.</p>
@@ -160,13 +145,6 @@
       });
     }, {threshold: 0.15});
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-    // Countdown spots simulation
-    let spots = 15;
-    const countdownEl = document.getElementById('countdown');
-    setInterval(() => {
-      if(spots>0){ spots--; countdownEl.textContent = `⏳ ${spots} spots left`; }
-    }, 30000); // يقل كل 30 ثانية (محاكاة)
   </script>
 </body>
 </html>
