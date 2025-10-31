@@ -4,10 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TYF | Landing Pages that Sell</title>
-
   <link rel="icon" type="image/png" href="favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
   <meta name="description" content="Get high-converting landing pages with 50% off — designed to turn visitors into paying clients. Limited-time offer ends soon.">
 
   <style>
@@ -47,7 +45,7 @@
       padding: 18px 35px; border-radius: 12px; text-decoration: none;
       font-weight: bold; display: inline-block; transition: all 0.3s ease;
       background: #ff4500; color: #fff; font-size: 1.2rem;
-      cursor: pointer;
+      cursor:pointer;
     }
     .btn:hover {
       transform: translateY(-5px) scale(1.05);
@@ -66,6 +64,7 @@
       transition: all 0.3s ease;
       z-index: 999;
       animation: pulse 1.8s infinite;
+      cursor:pointer;
     }
     .floating-btn:hover {transform: scale(1.1);}
     @keyframes pulse {
@@ -74,7 +73,7 @@
       100% {box-shadow: 0 0 0 0 rgba(255,69,0,0);}
     }
 
-    /* Contact Form */
+    /* Contact Form Section */
     .contact-section {
       background: #1a1a1a;
       border-radius: 15px;
@@ -82,88 +81,67 @@
       text-align: center;
       margin-top: 60px;
     }
-    .contact-section input {
-      width: 100%; padding: 14px; border-radius: 10px; border: none;
-      margin-bottom: 15px; background: #111; color: #fff; font-size: 1rem;
-    }
-    .contact-section button {
-      background: #ff4500; color: #fff; border: none; border-radius: 10px;
-      padding: 14px 25px; cursor: pointer; font-weight: bold; transition: all 0.3s;
-    }
-    .contact-section button:hover {transform: scale(1.05);}
-
+    iframe {border:none; border-radius:12px;}
+    
+    /* Responsive Adjustments */
     @media(max-width:768px){
       .features {flex-direction: column; gap: 20px;}
     }
-
-    /* Video */
-    .hero-video { width: 100%; max-height: 500px; object-fit: cover; border-radius: 15px; }
+    video {width:100%; border-radius:12px; margin-top:30px;}
   </style>
 </head>
 
 <body>
-  <!-- Hero Video -->
-  <section>
-    <video class="hero-video" autoplay muted loop playsinline>
+  <!-- Video Header -->
+  <section class="fade-in">
+    <video controls autoplay muted loop>
       <source src="last video.mp4" type="video/mp4">
-      Your browser does not support the video tag.
+      Your browser does not support HTML5 video.
     </video>
   </section>
 
   <!-- Top CTA -->
-  <section class="fade-in" style="text-align:center;">
-    <button class="btn scroll-btn" data-target="contact">🚀 Grab 50% OFF Now!</button>
-    <p style="color:#ffcc00; margin-top:10px;">⚡ Get your landing page delivered in <strong>24h</strong>!</p>
+  <section class="fade-in" style="text-align:center; margin-top:40px;">
+    <div class="btn" id="ctaTop">🚀 Grab 50% OFF Now!</div>
+    <p style="color:#ffcc00; margin-top:10px;">⚠️ Limited-time offer — ends soon!</p>
   </section>
 
-  <!-- Problem -->
+  <!-- Problem Section -->
   <section class="fade-in">
     <h2>🎯 Your Current Problem</h2>
     <p>Tired of visitors leaving without buying? Your traffic is high, but your sales are low? Don’t worry — we have the solution!</p>
   </section>
 
-  <!-- Solution -->
+  <!-- Solution Section -->
   <section class="fade-in">
     <h2>💡 The Professional Solution</h2>
     <p>Here’s what your new landing page will fix — step by step:</p>
     <div class="features">
-      <div class="feature-card"><i>⏱️</i><h3>Fast Delivery</h3><p>Landing page ready in <strong>24h</strong>.</p></div>
+      <div class="feature-card"><i>⚡</i><h3>Fast Delivery</h3><p>Get your landing page ready in just 24h — super fast turnaround!</p></div>
       <div class="feature-card"><i>💰</i><h3>Convert Visitors</h3><p>Designed with sales psychology to turn clicks into clients.</p></div>
       <div class="feature-card"><i>🎨</i><h3>Attractive Design</h3><p>Clean colors and smooth UX that guide your visitors straight to purchase.</p></div>
       <div class="feature-card"><i>✍️</i><h3>Persuasive Copywriting</h3><p>Texts that trigger emotion and make people take action immediately.</p></div>
       <div class="feature-card"><i>🏷️</i><h3>Custom Branding</h3><p>Every page tailored to your unique brand identity — no templates.</p></div>
       <div class="feature-card"><i>📱</i><h3>Responsive Design</h3><p>Flawless experience on mobile, tablet, and desktop.</p></div>
-      <div class="feature-card"><i>⚡</i><h3>Fast Loading</h3><p>Blazing fast performance for maximum conversions and SEO boost.</p></div>
     </div>
   </section>
 
-  <!-- About Me -->
+  <!-- About Me Section -->
   <section class="fade-in">
     <h2>🙋‍♂️ About Me</h2>
     <p>I'm TYF — a landing page designer & developer helping entrepreneurs, course creators, and digital businesses turn visitors into real buyers.</p>
   </section>
 
-  <!-- Contact Form -->
+  <!-- Contact Form Section -->
   <section id="contact" class="contact-section fade-in">
     <h2>🚀 Get Your Landing Page in 24h</h2>
-    <form id="contactForm" style="max-width:400px; margin:auto; display:flex; flex-direction:column; gap:12px;">
-      <input type="text" id="name" placeholder="Full Name" required>
-      <input type="text" id="business" placeholder="Your Business Name" required>
-      <input type="text" id="contactInfo" placeholder="Your Email or WhatsApp" required>
-      <button type="submit">Send</button>
-    </form>
+    <p style="color:#ccc;">Fill in your details below 👇</p>
+    
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSekVRodR-Xkr8Mmnsf00bdhjDpIIVxskGZv4od5djjTV66m6A/viewform?embedded=true" width="100%" height="700">Loading…</iframe>
   </section>
-
-  <!-- Thank You Page Simulation -->
-  <section id="thankYou" style="display:none; text-align:center; padding:200px 20px; background:#0d0d0d; color:#fff;">
-    <h1 style="font-size:3rem; color:#ff4500;">✅ Thank You!</h1>
-    <p style="font-size:1.5rem; margin-top:20px;">We’ll contact you very soon 👋</p>
-  </section>
-
-  <footer>TYF | Landing Pages that Sell</footer>
 
   <!-- Floating CTA -->
-  <button class="floating-btn scroll-btn" data-target="contact">🔥 Claim 50% OFF</button>
+  <div class="floating-btn" id="floatingCTA">🔥 Claim 50% OFF</div>
 
   <script>
     // Fade-in animation
@@ -174,35 +152,12 @@
     }, {threshold: 0.15});
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-    // Smooth scroll CTA
-    document.querySelectorAll('.scroll-btn').forEach(btn=>{
-      btn.addEventListener('click', e=>{
-        e.preventDefault();
-        const targetId = btn.getAttribute('data-target');
-        document.getElementById(targetId).scrollIntoView({behavior:'smooth'});
-      });
-    });
-
-    // Contact Form
-    const form = document.getElementById("contactForm");
-    form.addEventListener("submit", function(e){
-      e.preventDefault();
-      // افتح واتساب مع بيانات المستخدم
-      const name = document.getElementById("name").value;
-      const business = document.getElementById("business").value;
-      const contact = document.getElementById("contactInfo").value;
-      const whatsappNumber = "+213676127853";
-      const message = `Name: ${name}%0ABusiness: ${business}%0AContact: ${contact}`;
-      window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
-
-      // إظهار صفحة Thank You كاملة
-      document.body.innerHTML = `
-        <section style="text-align:center; padding:200px 20px; background:#0d0d0d; color:#fff;">
-          <h1 style="font-size:3rem; color:#ff4500;">✅ Thank You!</h1>
-          <p style="font-size:1.5rem; margin-top:20px;">We’ll contact you very soon 👋</p>
-        </section>
-      `;
-    });
+    // Smooth scroll CTA buttons
+    function scrollToContact(){ 
+      document.querySelector('#contact').scrollIntoView({behavior:'smooth'});
+    }
+    document.getElementById('ctaTop').addEventListener('click', scrollToContact);
+    document.getElementById('floatingCTA').addEventListener('click', scrollToContact);
   </script>
 </body>
 </html>
