@@ -1,172 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TYF | Landing Pages that Sell</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TYF Funnels</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <h1>TYF Funnels</h1>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <section class="hero">
+      <div class="hero-content">
+        <h2>Turn Visitors into Buyers 🚀</h2>
+        <p>
+          Get a high-converting landing page that boosts your sales, increases
+          signups, and maximizes your ad ROI.
+        </p>
+        <button>Get Started</button>
+      </div>
+    </section>
 
-  <style>
-    * {margin: 0; padding: 0; box-sizing: border-box;}
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #0d0d0d;
-      color: #fff;
-      overflow-x: hidden;
-    }
-    section {max-width: 1200px; margin: 80px auto; padding: 0 20px;}
-    h2 {font-size: 2.2rem; margin-bottom: 20px; text-align: center; color: #ff4500;}
-    p {font-size: 1.1rem; line-height: 1.7; text-align: center; margin-bottom: 30px;}
+    <section id="services" class="services">
+      <h2>What You’ll Get</h2>
+      <div class="service-cards">
+        <div class="card">
+          <h3>Custom Design 🎨</h3>
+          <p>
+            Tailored to your brand with modern, responsive design optimized for
+            every device.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Copywriting ✍️</h3>
+          <p>
+            Persuasive copy designed to engage, convince, and convert your
+            visitors.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Speed & SEO ⚡</h3>
+          <p>
+            Fast-loading pages with SEO best practices to attract more organic
+            visitors.
+          </p>
+        </div>
+      </div>
+    </section>
 
-    /* Features */
-    .features {
-      display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 50px;
-    }
-    .feature-card {
-      flex: 1 1 300px; background: #1a1a1a; padding: 25px;
-      border-radius: 15px; box-shadow: 0 10px 25px rgba(255,69,0,0.2);
-      text-align: center; transition: transform 0.3s;
-    }
-    .feature-card:hover {transform: translateY(-10px);}
-    .feature-card h3 {font-size: 1.4rem; margin-bottom: 10px; color: #ff4500;}
-    .feature-card i {font-size: 2rem; margin-bottom: 10px; color:#ffcc00;}
+    <section id="portfolio" class="portfolio">
+      <h2>Our Work</h2>
+      <div class="portfolio-items">
+        <div class="portfolio-item">
+          <img src="project1.png" alt="Project 1" />
+          <p>Online Course Landing Page</p>
+        </div>
+        <div class="portfolio-item">
+          <img src="project2.png" alt="Project 2" />
+          <p>Marketing Agency Funnel</p>
+        </div>
+        <div class="portfolio-item">
+          <img src="project3.png" alt="Project 3" />
+          <p>Product Launch Page</p>
+        </div>
+      </div>
+    </section>
 
-    footer {
-      text-align: center; padding: 50px 20px; color: #777;
-      font-size: 0.9rem; border-top: 1px solid #333;
-    }
+    <section id="contact" class="contact">
+      <h2>Get Your Landing Page Now</h2>
+      <p>
+        We help coaches, course creators, and marketers turn clicks into
+        clients.
+      </p>
+      <button>Book Your Spot</button>
+    </section>
 
-    .fade-in {opacity: 0; transform: translateY(50px); transition: all 0.6s ease;}
-    .fade-in.show {opacity: 1; transform: translateY(0);}
-
-    .btn {
-      padding: 18px 35px; border-radius: 12px; text-decoration: none;
-      font-weight: bold; display: inline-block; transition: all 0.3s ease;
-      background: #ff4500; color: #fff; font-size: 1.2rem;
-    }
-    .btn:hover {
-      transform: translateY(-5px) scale(1.05);
-      box-shadow: 0 10px 25px rgba(255,69,0,0.4);
-      opacity: 0.95;
-    }
-
-    /* Countdown */
-    .countdown-info {
-      color: #ffcc00; font-weight: bold; font-size: 1.8rem;
-      margin-top: 10px; text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
-      padding: 12px 25px; background: rgba(255,69,0,0.1);
-      border-radius: 12px; transition: all 0.3s ease;
-      display:inline-block;
-    }
-    .countdown-info:hover {
-      transform: scale(1.1);
-      box-shadow: 0 8px 25px rgba(255,69,0,0.6);
-    }
-
-    /* Floating Button */
-    .floating-btn {
-      position: fixed;
-      bottom: 25px; right: 25px;
-      background: #ff4500; color: #fff;
-      padding: 15px 25px; border-radius: 50px;
-      font-weight: 600; font-size: 1.1rem;
-      box-shadow: 0 10px 25px rgba(255,69,0,0.3);
-      transition: all 0.3s ease;
-      z-index: 999;
-      animation: pulse 1.8s infinite;
-    }
-    .floating-btn:hover {transform: scale(1.1);}
-    @keyframes pulse {
-      0% {box-shadow: 0 0 0 0 rgba(255,69,0,0.5);}
-      70% {box-shadow: 0 0 0 15px rgba(255,69,0,0);}
-      100% {box-shadow: 0 0 0 0 rgba(255,69,0,0);}
-    }
-
-    /* Responsive Adjustments */
-    @media(max-width:768px){
-      .features {flex-direction: column; gap: 20px;}
-    }
-  </style>
-</head>
-
-<body>
-  <!-- Top CTA -->
-  <section class="fade-in" style="text-align:center;">
-    <a href="https://wa.me/213676127853" target="_blank" class="btn">🚀 Grab 50% OFF Now!</a>
-    <p style="color:#ffcc00; margin-top:10px;">⚠️ Only <strong>15 spots</strong> left — this deal disappears fast!</p>
-  </section>
-
-  <!-- Problem -->
-  <section class="fade-in">
-    <h2>🎯 Your Current Problem</h2>
-    <p>Tired of visitors leaving without buying? Your traffic is high, but your sales are low? Don’t worry — we have the solution!</p>
-    <div style="text-align:center; margin-top:20px;">
-      <a href="https://wa.me/213676127853" target="_blank" class="btn">🚀 Claim Your Spot</a>
-    </div>
-  </section>
-
-  <!-- Solution -->
-  <section class="fade-in">
-    <h2>💡 The Professional Solution</h2>
-    <p>Here’s what your new landing page will fix — step by step:</p>
-    <div class="features">
-      <div class="feature-card"><i>💰</i><h3>Convert Visitors</h3><p>Designed with sales psychology to turn clicks into clients.</p></div>
-      <div class="feature-card"><i>🎨</i><h3>Attractive Design</h3><p>Clean colors and smooth UX that guide your visitors straight to purchase.</p></div>
-      <div class="feature-card"><i>✍️</i><h3>Persuasive Copywriting</h3><p>Texts that trigger emotion and make people take action immediately.</p></div>
-      <div class="feature-card"><i>🏷️</i><h3>Custom Branding</h3><p>Every page tailored to your unique brand identity — no templates.</p></div>
-      <div class="feature-card"><i>📱</i><h3>Responsive Design</h3><p>Flawless experience on mobile, tablet, and desktop.</p></div>
-      <div class="feature-card"><i>⚡</i><h3>Fast Loading</h3><p>Blazing fast performance for maximum conversions and SEO boost.</p></div>
-      <div class="feature-card"><i>📈</i><h3>Lead Capture System</h3><p>Automatic client data collection — never miss a lead again.</p></div>
-    </div>
-  </section>
-
-  <!-- About Me -->
-  <section class="fade-in">
-    <h2>🙋‍♂️ About Me</h2>
-    <p>I'm TYF — a landing page designer & developer helping entrepreneurs, course creators, and digital businesses turn visitors into real buyers.</p>
-    <p>I’ve helped 20+ businesses increase sales by up to 50% with pages designed to convert — not just look pretty.</p>
-  </section>
-
-  <!-- Limited-Time Offer -->
-  <section class="fade-in">
-    <h2>🎁 Limited-Time Offer</h2>
-    <p>🚨 Regular Price: <s>$1500</s></p>
-    <p>✅ Now: <strong>$750</strong> (50% OFF) – Only <strong>15 spots</strong> available.</p>
-    <p class="countdown-info" id="countdown">⏳ 15 spots left</p>
-
-    <p style="margin-top:25px; color:#ff4500; font-weight:bold;">🛡️ 1-Week Guarantee</p>
-    <p>You’ll get a full week of <strong>unlimited edits</strong> until you're 100% satisfied.</p>
-
-    <p style="margin-top:15px; color:#ff4500; font-weight:bold;">💰 No Risk — Pay Only If You Love It</p>
-    <p>Zero risk, nothing to lose.</p>
-
-    <div style="display:flex; justify-content:center; margin-top:30px;">
-      <a href="https://wa.me/213676127853" target="_blank" class="btn">🚀 Grab 50% OFF Now!</a>
-    </div>
-  </section>
-
-  <footer>TYF | Landing Pages that Sell</footer>
-
-  <!-- Floating CTA Button -->
-  <a href="https://wa.me/213676127853" target="_blank" class="floating-btn">🔥 Claim 50% OFF</a>
-
-  <script>
-    // Fade-in animation
-    const observer = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting){ entry.target.classList.add('show'); obs.unobserve(entry.target); }
-      });
-    }, {threshold: 0.15});
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-    // Countdown spots simulation
-    let spots = 15;
-    const countdownEl = document.getElementById('countdown');
-    setInterval(() => {
-      if(spots>0){ spots--; countdownEl.textContent = `⏳ ${spots} spots left`; }
-    }, 30000); // يقل كل 30 ثانية (محاكاة)
-  </script>
-</body>
+    <footer>
+      <p>© 2025 TYF Funnels. All rights reserved.</p>
+    </footer>
+  </body>
 </html>
