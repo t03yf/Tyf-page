@@ -8,6 +8,8 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
+  <meta name="description" content="Get high-converting landing pages with 50% off — designed to turn visitors into paying clients. Limited-time offer ends soon.">
+
   <style>
     * {margin: 0; padding: 0; box-sizing: border-box;}
     body {
@@ -52,6 +54,15 @@
       opacity: 0.95;
     }
 
+    /* Countdown */
+    .countdown-info {
+      color: #ffcc00; font-weight: bold; font-size: 1.8rem;
+      margin-top: 10px; text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+      padding: 12px 25px; background: rgba(255,69,0,0.1);
+      border-radius: 12px; transition: all 0.3s ease;
+      display:inline-block;
+    }
+
     /* Floating Button */
     .floating-btn {
       position: fixed;
@@ -71,7 +82,25 @@
       100% {box-shadow: 0 0 0 0 rgba(255,69,0,0);}
     }
 
-    /* Responsive Adjustments */
+    /* Contact Form */
+    .contact-section {
+      background: #1a1a1a;
+      border-radius: 15px;
+      padding: 60px 25px;
+      text-align: center;
+      margin-top: 60px;
+    }
+    .contact-section input, .contact-section select {
+      width: 100%; padding: 14px; border-radius: 10px; border: none;
+      margin-bottom: 15px; background: #111; color: #fff; font-size: 1rem;
+    }
+    .contact-section button {
+      background: #ff4500; color: #fff; border: none; border-radius: 10px;
+      padding: 14px 25px; cursor: pointer; font-weight: bold; transition: all 0.3s;
+    }
+    .contact-section button:hover {transform: scale(1.05);}
+    #thankYou {display:none;}
+
     @media(max-width:768px){
       .features {flex-direction: column; gap: 20px;}
     }
@@ -81,7 +110,8 @@
 <body>
   <!-- Top CTA -->
   <section class="fade-in" style="text-align:center;">
-    <a href="https://wa.me/213676127853" target="_blank" class="btn">🚀 Grab 50% OFF Now!</a>
+    <a href="#contact" class="btn">🚀 Grab 50% OFF Now!</a>
+    <p style="color:#ffcc00; margin-top:10px;">⚠️ Limited-time offer — ends soon!</p>
   </section>
 
   <!-- Problem -->
@@ -89,7 +119,7 @@
     <h2>🎯 Your Current Problem</h2>
     <p>Tired of visitors leaving without buying? Your traffic is high, but your sales are low? Don’t worry — we have the solution!</p>
     <div style="text-align:center; margin-top:20px;">
-      <a href="https://wa.me/213676127853" target="_blank" class="btn">🚀 Claim Your Spot</a>
+      <a href="#contact" class="btn">🚀 Claim Your Spot</a>
     </div>
   </section>
 
@@ -120,22 +150,44 @@
     <h2>🎁 Limited-Time Offer</h2>
     <p>🚨 Regular Price: <s>$1500</s></p>
     <p>✅ Now: <strong>$750</strong> (50% OFF)</p>
+    <p class="countdown-info" id="countdown">⏰ Ends in 48h 00m 00s</p>
 
     <p style="margin-top:25px; color:#ff4500; font-weight:bold;">🛡️ 1-Week Guarantee</p>
     <p>You’ll get a full week of <strong>unlimited edits</strong> until you're 100% satisfied.</p>
 
     <p style="margin-top:15px; color:#ff4500; font-weight:bold;">💰 No Risk — Pay Only If You Love It</p>
     <p>Zero risk, nothing to lose.</p>
+  </section>
 
-    <div style="display:flex; justify-content:center; margin-top:30px;">
-      <a href="https://wa.me/213676127853" target="_blank" class="btn">🚀 Grab 50% OFF Now!</a>
-    </div>
+  <!-- Contact Form -->
+  <section id="contact" class="contact-section fade-in">
+    <h2>🚀 Get Your Landing Page in 24h</h2>
+    <p style="color:#ccc;">Fill in your details below and our team will contact you today 👇</p>
+
+    <form id="contactForm" style="max-width:400px; margin:auto; display:flex; flex-direction:column; gap:12px;">
+      <input type="text" id="name" placeholder="Full Name" required>
+      <input type="text" id="business" placeholder="Your Business Name" required>
+      <input type="text" id="contactInfo" placeholder="Your Email or WhatsApp" required>
+      <select id="pageType">
+        <option value="Sales Page">Sales Page</option>
+        <option value="Course Page">Course Page</option>
+        <option value="Agency Page">Agency Page</option>
+        <option value="Other">Other</option>
+      </select>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <!-- Thank You Section -->
+  <section id="thankYou" class="fade-in" style="text-align:center; padding:80px 20px;">
+    <h2>✅ We Got Your Info!</h2>
+    <p style="color:#ccc; margin-top:10px;">Our team will contact you within <strong>24 hours</strong>.<br>Thank you for trusting <strong>TYF</strong> 🙌</p>
   </section>
 
   <footer>TYF | Landing Pages that Sell</footer>
 
-  <!-- Floating CTA Button -->
-  <a href="https://wa.me/213676127853" target="_blank" class="floating-btn">🔥 Claim 50% OFF</a>
+  <!-- Floating CTA -->
+  <a href="#contact" class="floating-btn">🔥 Claim 50% OFF</a>
 
   <script>
     // Fade-in animation
@@ -145,6 +197,29 @@
       });
     }, {threshold: 0.15});
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Countdown 48 hours
+    const end = new Date().getTime() + 48*60*60*1000;
+    const el = document.getElementById("countdown");
+    setInterval(()=>{
+      const diff = end - new Date().getTime();
+      if(diff <= 0){ el.textContent = "❌ Offer expired!"; return; }
+      const h = Math.floor(diff/1000/60/60);
+      const m = Math.floor((diff/1000/60)%60);
+      const s = Math.floor((diff/1000)%60);
+      el.textContent = `⏰ Ends in ${h}h ${m}m ${s}s`;
+    },1000);
+
+    // Contact form simulation
+    const form = document.getElementById("contactForm");
+    const contactSection = document.getElementById("contact");
+    const thankYouSection = document.getElementById("thankYou");
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+      contactSection.style.display = "none";
+      thankYouSection.style.display = "block";
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
   </script>
 </body>
 </html>
