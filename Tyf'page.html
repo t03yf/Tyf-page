@@ -10,7 +10,8 @@
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:'Poppins',sans-serif;background:#0d0d0d;color:#fff;overflow-x:hidden}
   section{max-width:1200px;margin:80px auto;padding:0 20px}
-  h2{font-size:2.2rem;margin-bottom:20px;text-align:center;color:#ff4500}
+  h1,h2{margin-bottom:20px;text-align:center;color:#ff4500}
+  h1{font-size:2.4rem} h2{font-size:2.2rem}
   p{font-size:1.05rem;line-height:1.7;text-align:center;margin-bottom:22px;color:#ddd}
 
   .features{display:flex;flex-wrap:wrap;justify-content:center;gap:26px;margin-top:40px}
@@ -37,7 +38,8 @@
 
   .fade-in{opacity:0;transform:translateY(24px);transition:all .6s} .fade-in.show{opacity:1;transform:translateY(0)}
   @media(max-width:820px){.features{gap:18px}.feature-card{padding:18px}.cta-circle,.floating-btn{width:56px;height:56px;font-size:12px}}
-  /* thank you full-screen style (hidden until submit) */
+
+  /* thank you full-screen style */
   #thankYouScreen{display:none;min-height:100vh;align-items:center;justify-content:center;text-align:center;padding:40px}
   #thankYouScreen h1{color:#ff4500;font-size:2.6rem;margin-bottom:12px}
   #thankYouScreen p{color:#ccc;font-size:1.1rem}
@@ -53,7 +55,7 @@
         <p style="max-width:760px;color:#ddd">We help businesses & entrepreneurs turn visitors into paying clients.</p>
 
         <!-- top circular CTA button -->
-        <button class="cta-circle" id="topCTA" aria-label="Copywriting CTA">Copywriting</button>
+        <button class="cta-circle" id="topCTA" aria-label="Get Your Page Now">Get Your Page Now</button>
 
         <p style="color:#ffcc00;margin-top:14px">⚡ Fast Delivery — <strong>24h</strong></p>
       </div>
@@ -72,27 +74,20 @@
       </div>
     </section>
 
-    <!-- Contact: custom form that POSTS to Google Form in background -->
+    <!-- Contact: Google Form in background -->
     <section id="contact" class="contact-section fade-in" aria-label="Contact section">
       <div class="contact-inner">
         <h2 class="contact-title">🚀 Get Your Landing Page</h2>
         <p class="contact-sub">Fill the short form below — results go straight to our Google Sheet.</p>
 
-        <!-- CUSTOM form (user fills this). We'll POST these values to Google Forms behind the scenes -->
+        <!-- CUSTOM form (Google Form POST in background) -->
         <form id="customForm" class="custom-form" autocomplete="off">
-          <!-- ======= IMPORTANT: replace the three name="entry.XXXXX" below with the real entry IDs from your Google Form =======
-               HOW TO GET entry IDs (quick):
-                 1) Open your Google Form view link in a browser.
-                 2) Press Ctrl+U (View Page Source) and search for "entry." (Ctrl+F).
-                 3) Copy the entry.xxxxxx for each field (Full Name, Email/WhatsApp, Business Name).
-               Paste them exactly (entry.123456789) replacing the placeholders below.
-          ============================================================================================================ -->
+          <!-- REPLACE entry IDs with your Google Form entry IDs -->
           <input type="text" id="field_name" name="entry.REPLACE_ENTRY_NAME" placeholder="Full Name" required>
           <input type="text" id="field_contact" name="entry.REPLACE_ENTRY_CONTACT" placeholder="Email or WhatsApp" required>
           <input type="text" id="field_business" name="entry.REPLACE_ENTRY_BUSINESS" placeholder="Business Name" required>
           <button type="submit" id="submitBtn">Send</button>
         </form>
-
       </div>
     </section>
 
@@ -101,7 +96,7 @@
     <div class="floating-btn" id="floatingCTA" title="Claim 50% Off">🔥</div>
   </div>
 
-  <!-- THANK YOU SCREEN (SAME FILE, SHOWN AFTER SUBMIT) -->
+  <!-- THANK YOU SCREEN -->
   <div id="thankYouScreen" style="display:none;flex-direction:column;background:#0d0d0d;">
     <h1>✅ Thank You!</h1>
     <p>We’ll contact you very soon 👋</p>
@@ -125,15 +120,8 @@
   document.getElementById('topCTA').addEventListener('click', scrollToContact);
   document.getElementById('floatingCTA').addEventListener('click', scrollToContact);
 
-  // ---------- GOOGLE FORM SUBMIT IN BACKGROUND ----------
-  // STEP: Replace the FORM_ACTION URL with your form's formResponse URL if different.
-  // You can get it by taking your viewform URL:
-  //   https://docs.google.com/forms/d/e/<FORM_ID>/viewform
-  // and using:
-  //   https://docs.google.com/forms/d/e/<FORM_ID>/formResponse
-  // In your case the assistant already had form id: 1FAIpQLSekVRodR-... so default below usually works.
+  // GOOGLE FORM SUBMIT IN BACKGROUND
   const GOOGLE_FORM_ACTION = 'https://docs.google.com/forms/d/e/1FAIpQLSekVRodR-Xkr8Mmnsf00bdhjDpIIVxskGZv4od5djjTV66m6A/formResponse';
-
   const form = document.getElementById('customForm');
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -141,30 +129,24 @@
     btn.disabled = true;
     btn.textContent = 'Sending...';
 
-    // build FormData mapped to Google Form entry names (must replace placeholders above!)
     const fd = new FormData();
     fd.append(document.getElementById('field_name').name, document.getElementById('field_name').value);
     fd.append(document.getElementById('field_contact').name, document.getElementById('field_contact').value);
     fd.append(document.getElementById('field_business').name, document.getElementById('field_business').value);
 
     try {
-      // POST with no-cors so browser doesn't block cross-origin form POST.
       await fetch(GOOGLE_FORM_ACTION, { method: 'POST', mode: 'no-cors', body: fd });
-      // show thank you screen (replace page contents)
       document.getElementById('mainContent').style.display = 'none';
-      const ty = document.getElementById('thankYouScreen');
-      ty.style.display = 'flex';
-      ty.style.minHeight = '100vh';
+      document.getElementById('thankYouScreen').style.display = 'flex';
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } catch (err) {
-      // still show thank you to user (POST usually succeeds with no-cors)
       document.getElementById('mainContent').style.display = 'none';
       document.getElementById('thankYouScreen').style.display = 'flex';
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   });
 
-  // back to home link on thank you
+  // back to home
   document.getElementById('backHome').addEventListener('click', (e)=>{
     e.preventDefault();
     document.getElementById('thankYouScreen').style.display = 'none';
