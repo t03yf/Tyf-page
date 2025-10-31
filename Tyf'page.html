@@ -1,163 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TYF | Landing Pages that Sell</title>
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <meta name="description" content="Get high-converting landing pages with 50% off — designed to turn visitors into paying clients. Limited-time offer ends soon.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TYF | Landing Pages that Sell</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    * {margin: 0; padding: 0; box-sizing: border-box;}
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #0d0d0d;
-      color: #fff;
-      overflow-x: hidden;
-    }
-    section {max-width: 1200px; margin: 80px auto; padding: 0 20px;}
-    h2 {font-size: 2.2rem; margin-bottom: 20px; text-align: center; color: #ff4500;}
-    p {font-size: 1.1rem; line-height: 1.7; text-align: center; margin-bottom: 30px;}
+<style>
+* {margin:0; padding:0; box-sizing:border-box;}
+body {font-family:'Poppins',sans-serif; background:#0d0d0d; color:#fff; overflow-x:hidden;}
+section {max-width:1200px; margin:80px auto; padding:0 20px;}
+h2 {font-size:2.2rem; margin-bottom:20px; text-align:center; color:#ff4500;}
+p {font-size:1.1rem; line-height:1.7; text-align:center; margin-bottom:30px;}
 
-    /* Features */
-    .features {
-      display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 50px;
-    }
-    .feature-card {
-      flex: 1 1 300px; background: #1a1a1a; padding: 25px;
-      border-radius: 15px; box-shadow: 0 10px 25px rgba(255,69,0,0.2);
-      text-align: center; transition: transform 0.3s;
-    }
-    .feature-card:hover {transform: translateY(-10px);}
-    .feature-card h3 {font-size: 1.4rem; margin-bottom: 10px; color: #ff4500;}
-    .feature-card i {font-size: 2rem; margin-bottom: 10px; color:#ffcc00;}
+/* Features */
+.features {display:flex; flex-wrap:wrap; justify-content:center; gap:30px; margin-top:50px;}
+.feature-card {flex:1 1 300px; background:#1a1a1a; padding:25px; border-radius:15px; box-shadow:0 10px 25px rgba(255,69,0,0.2); text-align:center; transition:transform 0.3s;}
+.feature-card:hover {transform:translateY(-10px);}
+.feature-card h3 {font-size:1.4rem; margin-bottom:10px; color:#ff4500;}
+.feature-card i {font-size:2rem; margin-bottom:10px; color:#ffcc00;}
 
-    footer {
-      text-align: center; padding: 50px 20px; color: #777;
-      font-size: 0.9rem; border-top: 1px solid #333;
-    }
+/* Floating CTA */
+.floating-btn {position:fixed; bottom:25px; right:25px; background:#ff4500; color:#fff; padding:15px 25px; border-radius:50px; font-weight:600; font-size:1.1rem; box-shadow:0 10px 25px rgba(255,69,0,0.3); transition:all 0.3s ease; z-index:999; animation:pulse 1.8s infinite;}
+.floating-btn:hover {transform:scale(1.1);}
+@keyframes pulse {0% {box-shadow:0 0 0 0 rgba(255,69,0,0.5);} 70% {box-shadow:0 0 0 15px rgba(255,69,0,0);} 100% {box-shadow:0 0 0 0 rgba(255,69,0,0);}}
 
-    .fade-in {opacity: 0; transform: translateY(50px); transition: all 0.6s ease;}
-    .fade-in.show {opacity: 1; transform: translateY(0);}
+/* Contact Form */
+.contact-section {background:#1a1a1a; border-radius:15px; padding:60px 25px; text-align:center; margin-top:60px;}
+.contact-section input {width:100%; padding:14px; border-radius:10px; border:none; margin-bottom:15px; background:#111; color:#fff; font-size:1rem;}
+.contact-section button {background:#ff4500; color:#fff; border:none; border-radius:10px; padding:14px 25px; cursor:pointer; font-weight:bold; transition:all 0.3s;}
+.contact-section button:hover {transform:scale(1.05);}
 
-    .btn {
-      padding: 18px 35px; border-radius: 12px; text-decoration: none;
-      font-weight: bold; display: inline-block; transition: all 0.3s ease;
-      background: #ff4500; color: #fff; font-size: 1.2rem;
-      cursor:pointer;
-    }
-    .btn:hover {
-      transform: translateY(-5px) scale(1.05);
-      box-shadow: 0 10px 25px rgba(255,69,0,0.4);
-      opacity: 0.95;
-    }
-
-    /* Floating Button */
-    .floating-btn {
-      position: fixed;
-      bottom: 25px; right: 25px;
-      background: #ff4500; color: #fff;
-      padding: 15px 25px; border-radius: 50px;
-      font-weight: 600; font-size: 1.1rem;
-      box-shadow: 0 10px 25px rgba(255,69,0,0.3);
-      transition: all 0.3s ease;
-      z-index: 999;
-      animation: pulse 1.8s infinite;
-      cursor:pointer;
-    }
-    .floating-btn:hover {transform: scale(1.1);}
-    @keyframes pulse {
-      0% {box-shadow: 0 0 0 0 rgba(255,69,0,0.5);}
-      70% {box-shadow: 0 0 0 15px rgba(255,69,0,0);}
-      100% {box-shadow: 0 0 0 0 rgba(255,69,0,0);}
-    }
-
-    /* Contact Form Section */
-    .contact-section {
-      background: #1a1a1a;
-      border-radius: 15px;
-      padding: 60px 25px;
-      text-align: center;
-      margin-top: 60px;
-    }
-    iframe {border:none; border-radius:12px;}
-    
-    /* Responsive Adjustments */
-    @media(max-width:768px){
-      .features {flex-direction: column; gap: 20px;}
-    }
-    video {width:100%; border-radius:12px; margin-top:30px;}
-  </style>
+video {width:100%; max-height:600px; border-radius:15px; margin-top:30px;}
+@media(max-width:768px){.features {flex-direction:column; gap:20px;}}
+</style>
 </head>
 
 <body>
-  <!-- Video Header -->
-  <section class="fade-in">
-    <video controls autoplay muted loop>
-      <source src="last video.mp4" type="video/mp4">
-      Your browser does not support HTML5 video.
-    </video>
-  </section>
+<!-- Top CTA -->
+<section style="text-align:center;">
+  <a href="#contact" class="btn" onclick="scrollToForm(event)">🚀 Grab 50% OFF Now!</a>
+  <p style="color:#ffcc00; margin-top:10px;">⚠️ Limited-time offer — ends soon!</p>
+</section>
 
-  <!-- Top CTA -->
-  <section class="fade-in" style="text-align:center; margin-top:40px;">
-    <div class="btn" id="ctaTop">🚀 Grab 50% OFF Now!</div>
-    <p style="color:#ffcc00; margin-top:10px;">⚠️ Limited-time offer — ends soon!</p>
-  </section>
+<!-- Floating CTA -->
+<a href="#contact" class="floating-btn" onclick="scrollToForm(event)">🔥 Claim 50% OFF</a>
 
-  <!-- Problem Section -->
-  <section class="fade-in">
-    <h2>🎯 Your Current Problem</h2>
-    <p>Tired of visitors leaving without buying? Your traffic is high, but your sales are low? Don’t worry — we have the solution!</p>
-  </section>
+<!-- Video -->
+<video src="last video.mp4" controls autoplay muted></video>
 
-  <!-- Solution Section -->
-  <section class="fade-in">
-    <h2>💡 The Professional Solution</h2>
-    <p>Here’s what your new landing page will fix — step by step:</p>
-    <div class="features">
-      <div class="feature-card"><i>⚡</i><h3>Fast Delivery</h3><p>Get your landing page ready in just 24h — super fast turnaround!</p></div>
-      <div class="feature-card"><i>💰</i><h3>Convert Visitors</h3><p>Designed with sales psychology to turn clicks into clients.</p></div>
-      <div class="feature-card"><i>🎨</i><h3>Attractive Design</h3><p>Clean colors and smooth UX that guide your visitors straight to purchase.</p></div>
-      <div class="feature-card"><i>✍️</i><h3>Persuasive Copywriting</h3><p>Texts that trigger emotion and make people take action immediately.</p></div>
-      <div class="feature-card"><i>🏷️</i><h3>Custom Branding</h3><p>Every page tailored to your unique brand identity — no templates.</p></div>
-      <div class="feature-card"><i>📱</i><h3>Responsive Design</h3><p>Flawless experience on mobile, tablet, and desktop.</p></div>
-    </div>
-  </section>
+<!-- Problem -->
+<section>
+<h2>🎯 Your Current Problem</h2>
+<p>Tired of visitors leaving without buying? Your traffic is high, but your sales are low? Don’t worry — we have the solution!</p>
+</section>
 
-  <!-- About Me Section -->
-  <section class="fade-in">
-    <h2>🙋‍♂️ About Me</h2>
-    <p>I'm TYF — a landing page designer & developer helping entrepreneurs, course creators, and digital businesses turn visitors into real buyers.</p>
-  </section>
+<!-- Solution / Features -->
+<section>
+<h2>💡 The Professional Solution</h2>
+<p>Here’s what your new landing page will fix — step by step:</p>
+<div class="features">
+  <div class="feature-card"><i>⏱️</i><h3>Fast Delivery</h3><p>Get your landing page in 24h — rapid turnaround!</p></div>
+  <div class="feature-card"><i>💰</i><h3>Convert Visitors</h3><p>Designed with sales psychology to turn clicks into clients.</p></div>
+  <div class="feature-card"><i>🎨</i><h3>Attractive Design</h3><p>Clean colors and smooth UX that guide your visitors straight to purchase.</p></div>
+  <div class="feature-card"><i>✍️</i><h3>Persuasive Copywriting</h3><p>Texts that trigger emotion and make people take action immediately.</p></div>
+  <div class="feature-card"><i>🏷️</i><h3>Custom Branding</h3><p>Every page tailored to your unique brand identity — no templates.</p></div>
+  <div class="feature-card"><i>📱</i><h3>Responsive Design</h3><p>Flawless experience on mobile, tablet, and desktop.</p></div>
+  <div class="feature-card"><i>⚡</i><h3>Fast Loading</h3><p>Blazing fast performance for maximum conversions and SEO boost.</p></div>
+</div>
+</section>
 
-  <!-- Contact Form Section -->
-  <section id="contact" class="contact-section fade-in">
-    <h2>🚀 Get Your Landing Page in 24h</h2>
-    <p style="color:#ccc;">Fill in your details below 👇</p>
-    
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSekVRodR-Xkr8Mmnsf00bdhjDpIIVxskGZv4od5djjTV66m6A/viewform?embedded=true" width="100%" height="700">Loading…</iframe>
-  </section>
+<!-- About Me -->
+<section>
+<h2>🙋‍♂️ About Me</h2>
+<p>I'm TYF — a landing page designer & developer helping entrepreneurs, course creators, and digital businesses turn visitors into real buyers.</p>
+<p>I’ve helped 20+ businesses increase sales by up to 50% with pages designed to convert — not just look pretty.</p>
+</section>
 
-  <!-- Floating CTA -->
-  <div class="floating-btn" id="floatingCTA">🔥 Claim 50% OFF</div>
+<!-- Contact Form (custom design, sends to Google Form) -->
+<section id="contact" class="contact-section">
+<h2>🚀 Get Your Landing Page in 24h</h2>
+<p style="color:#ccc;">Fill in your details below 👇</p>
 
-  <script>
-    // Fade-in animation
-    const observer = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting){ entry.target.classList.add('show'); obs.unobserve(entry.target); }
-      });
-    }, {threshold: 0.15});
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+<form id="customForm" style="max-width:400px; margin:auto; display:flex; flex-direction:column; gap:12px;">
+  <input name="entry.123456" placeholder="Full Name" required>
+  <input name="entry.654321" placeholder="Email or WhatsApp" required>
+  <input name="entry.111222" placeholder="Business Name" required>
+  <button type="submit">Send</button>
+</form>
+</section>
 
-    // Smooth scroll CTA buttons
-    function scrollToContact(){ 
-      document.querySelector('#contact').scrollIntoView({behavior:'smooth'});
-    }
-    document.getElementById('ctaTop').addEventListener('click', scrollToContact);
-    document.getElementById('floatingCTA').addEventListener('click', scrollToContact);
-  </script>
+<script>
+// Scroll to form
+function scrollToForm(e){
+  e.preventDefault();
+  document.getElementById('contact').scrollIntoView({behavior:'smooth'});
+}
+
+// Form submission to Google Form + redirect
+const form = document.getElementById('customForm');
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  const data = new FormData(form);
+  await fetch('https://docs.google.com/forms/d/e/1FAIpQLSekVRodR-Xkr8Mmnsf00bdhjDpIIVxskGZv4od5djjTV66m6A/formResponse', {
+    method:'POST',
+    body: data
+  });
+  // Redirect to a full new page with only Thank You message
+  const newPage = window.open('', '_self');
+  newPage.document.write(`
+    <html>
+      <head>
+        <title>Thank You!</title>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+        <style>
+          body {background:#0d0d0d; color:#fff; font-family:'Poppins',sans-serif; display:flex; justify-content:center; align-items:center; height:100vh; text-align:center; margin:0;}
+          h1 {color:#ff4500; font-size:2.5rem; margin-bottom:20px;}
+        </style>
+      </head>
+      <body>
+        <div>
+          <h1>✅ Thank You!</h1>
+          <p>We’ll contact you very soon 👋</p>
+        </div>
+      </body>
+    </html>
+  `);
+});
+</script>
 </body>
 </html>
