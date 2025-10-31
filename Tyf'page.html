@@ -1,162 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TYF | Landing Pages that Sell</title>
-
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <meta name="description" content="Get high-converting landing pages with 50% off — designed to turn visitors into paying clients. Limited-time offer ends soon.">
-
-  <style>
-    * {margin: 0; padding: 0; box-sizing: border-box;}
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #0d0d0d;
-      color: #fff;
-      overflow-x: hidden;
-      scroll-behavior: smooth; /* سكورول سلس */
-    }
-    section {max-width: 1200px; margin: 80px auto; padding: 0 20px;}
-    h2 {font-size: 2.2rem; margin-bottom: 20px; text-align: center; color: #ff4500;}
-    p {font-size: 1.1rem; line-height: 1.7; text-align: center; margin-bottom: 30px;}
-
-    /* Features */
-    .features {
-      display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 50px;
-    }
-    .feature-card {
-      flex: 1 1 300px; background: #1a1a1a; padding: 25px;
-      border-radius: 15px; box-shadow: 0 10px 25px rgba(255,69,0,0.2);
-      text-align: center; transition: transform 0.3s;
-    }
-    .feature-card:hover {transform: translateY(-10px);}
-    .feature-card h3 {font-size: 1.4rem; margin-bottom: 10px; color: #ff4500;}
-    .feature-card i {font-size: 2rem; margin-bottom: 10px; color:#ffcc00;}
-
-    footer {
-      text-align: center; padding: 50px 20px; color: #777;
-      font-size: 0.9rem; border-top: 1px solid #333;
-    }
-
-    .fade-in {opacity: 0; transform: translateY(50px); transition: all 0.6s ease;}
-    .fade-in.show {opacity: 1; transform: translateY(0);}
-
-    .btn {
-      padding: 18px 35px; border-radius: 12px; text-decoration: none;
-      font-weight: bold; display: inline-block; transition: all 0.3s ease;
-      background: #ff4500; color: #fff; font-size: 1.2rem;
-      cursor: pointer;
-    }
-    .btn:hover {
-      transform: translateY(-5px) scale(1.05);
-      box-shadow: 0 10px 25px rgba(255,69,0,0.4);
-      opacity: 0.95;
-    }
-
-    /* Contact Form */
-    .contact-section {
-      background: #1a1a1a;
-      border-radius: 15px;
-      padding: 60px 25px;
-      text-align: center;
-      margin-top: 60px;
-    }
-    .contact-section iframe {
-      width: 100%;
-      max-width: 640px;
-      height: 689px;
-      border: none;
-      border-radius: 12px;
-    }
-
-    @media(max-width:768px){
-      .features {flex-direction: column; gap: 20px;}
-    }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>TYF Funnels</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+  body{background:#0a0a0a;color:#fff;line-height:1.6;}
+  header{padding:20px;text-align:center;background:#0f0f0f;position:sticky;top:0;z-index:999;border-bottom:1px solid #222;}
+  header h1{font-size:1.5rem;font-weight:700;color:#fff;}
+  section{padding:80px 20px;max-width:1000px;margin:auto;text-align:center;}
+  .hero h2{font-size:2.3rem;margin-bottom:10px;color:#00ff9d;}
+  .hero p{font-size:1.1rem;color:#ddd;margin-bottom:25px;}
+  .hero span{display:block;font-size:0.9rem;color:#ff5c5c;margin-bottom:5px;}
+  button{background:#00ff9d;color:#000;border:none;padding:14px 28px;border-radius:50px;font-weight:600;font-size:1rem;cursor:pointer;transition:0.3s;}
+  button:hover{background:#00cc7a;}
+  .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;margin-top:60px;}
+  .feature{background:#111;padding:25px;border-radius:15px;border:1px solid #222;transition:0.3s;}
+  .feature:hover{transform:translateY(-5px);border-color:#00ff9d;}
+  footer{padding:40px 20px;text-align:center;background:#0f0f0f;border-top:1px solid #222;color:#999;}
+  html{scroll-behavior:smooth;}
+  .scroll-btn{position:fixed;bottom:30px;right:30px;background:#00ff9d;color:#000;border:none;padding:15px 20px;border-radius:50px;font-weight:600;cursor:pointer;transition:0.3s;}
+  .scroll-btn:hover{background:#00cc7a;}
+</style>
 </head>
-
 <body>
-  <!-- Top CTA -->
-  <section class="fade-in" style="text-align:center;">
-    <a href="#contact" class="btn">🚀 Grab 50% OFF Now!</a>
-    <p style="color:#ffcc00; margin-top:10px;">⚠️ Limited-time offer — ends soon!</p>
-  </section>
 
-  <!-- Problem -->
-  <section class="fade-in">
-    <h2>🎯 Your Current Problem</h2>
-    <p>Tired of visitors leaving without buying? Your traffic is high, but your sales are low? Don’t worry — we have the solution!</p>
-    <div style="text-align:center; margin-top:20px;">
-      <a href="#contact" class="btn">🚀 Claim Your Spot</a>
+<header>
+  <h1>TYF Funnels</h1>
+</header>
+
+<section class="hero" id="top">
+  <h2>🚀 Grab 50% OFF Now!</h2>
+  <span>⚠️ Limited-time offer — ends soon!</span>
+  <p>🎯 Your Current Problem<br>
+  Tired of visitors leaving without buying? Your traffic is high, but your sales are low? Don’t worry — we have the solution!</p>
+  <!-- تم حذف زر 🚀 Claim Your Spot هنا فقط -->
+</section>
+
+<section id="offer">
+  <h2>💡 The Professional Solution</h2>
+  <p>We build high-converting landing pages designed to maximize your ROI and turn visitors into loyal customers. <br>From copywriting to design — all crafted for results.</p>
+  <div class="features">
+    <div class="feature">
+      <h3>🔥 Conversion-Driven Design</h3>
+      <p>Every layout, color, and section is built to make visitors take action — not just scroll.</p>
     </div>
-  </section>
-
-  <!-- Solution -->
-  <section class="fade-in">
-    <h2>💡 The Professional Solution</h2>
-    <p>Here’s what your new landing page will fix — step by step:</p>
-    <div class="features">
-      <div class="feature-card"><i>💰</i><h3>Convert Visitors</h3><p>Designed with sales psychology to turn clicks into clients.</p></div>
-      <div class="feature-card"><i>🎨</i><h3>Attractive Design</h3><p>Clean colors and smooth UX that guide your visitors straight to purchase.</p></div>
-      <div class="feature-card"><i>✍️</i><h3>Persuasive Copywriting</h3><p>Texts that trigger emotion and make people take action immediately.</p></div>
-      <div class="feature-card"><i>🏷️</i><h3>Custom Branding</h3><p>Every page tailored to your unique brand identity — no templates.</p></div>
-      <div class="feature-card"><i>📱</i><h3>Responsive Design</h3><p>Flawless experience on mobile, tablet, and desktop.</p></div>
-      <div class="feature-card"><i>⚡</i><h3>Fast Loading</h3><p>Blazing fast performance for maximum conversions and SEO boost.</p></div>
-      <div class="feature-card"><i>📈</i><h3>Lead Capture System</h3><p>Automatic client data collection — never miss a lead again.</p></div>
+    <div class="feature">
+      <h3>⚡ Lightning Fast Loading</h3>
+      <p>Your page loads in seconds, keeping customers engaged and improving ad performance.</p>
     </div>
-  </section>
+    <div class="feature">
+      <h3>🎯 Tailored To Your Offer</h3>
+      <p>We don’t use generic templates — your page is designed for your product and audience.</p>
+    </div>
+  </div>
+</section>
 
-  <!-- About Me -->
-  <section class="fade-in">
-    <h2>🙋‍♂️ About Me</h2>
-    <p>I'm TYF — a landing page designer & developer helping entrepreneurs, course creators, and digital businesses turn visitors into real buyers.</p>
-    <p>I’ve helped 75+ businesses increase sales by up to 50% with pages designed to convert — not just look pretty.</p>
-  </section>
+<section id="cta">
+  <h2>🚀 Ready To 2x Your Sales?</h2>
+  <p>Get your landing page now and see the difference within days.</p>
+  <button onclick="scrollToSection('top')">Grab 50% OFF Now</button>
+</section>
 
-  <!-- Limited-Time Offer -->
-  <section class="fade-in">
-    <h2>🎁 Limited-Time Offer</h2>
-    <p>🚨 Regular Price: <s>$1500</s></p>
-    <p>✅ Now: <strong>$750</strong> (50% OFF)</p>
-    <p style="margin-top:25px; color:#ff4500; font-weight:bold;">🛡️ 1-Week Guarantee</p>
-    <p>You’ll get a full week of <strong>unlimited edits</strong> until you're 100% satisfied.</p>
-    <p style="margin-top:15px; color:#ff4500; font-weight:bold;">💰 No Risk — Pay Only If You Love It</p>
-    <p>Zero risk, nothing to lose.</p>
-  </section>
+<footer>
+  <p>© 2025 TYF Funnels. All rights reserved.</p>
+</footer>
 
-  <!-- Contact Form (Google Form) -->
-  <section id="contact" class="contact-section fade-in">
-    <h2>🚀 Get Your Landing Page in 24h</h2>
-    <p style="color:#ccc;">Fill in your details below and our team will contact you today 👇</p>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSekVRodR-Xkr8Mmnsf00bdhjDpIIVxskGZv4od5djjTV66m6A/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-  </section>
+<button class="scroll-btn" onclick="scrollToSection('cta')">Get Offer</button>
 
-  <footer>TYF | Landing Pages that Sell</footer>
+<script>
+  function scrollToSection(id){
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
 
-  <!-- Floating CTA Button -->
-  <a href="#contact" class="btn" style="position: fixed; bottom: 25px; right: 25px; z-index: 999;">🔥 Claim 50% OFF</a>
-
-  <script>
-    // Fade-in animation
-    const observer = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting){ entry.target.classList.add('show'); obs.unobserve(entry.target); }
-      });
-    }, {threshold: 0.15});
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-    // Smooth scroll for all CTA links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if(target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
-    });
-  </script>
 </body>
 </html>
-
